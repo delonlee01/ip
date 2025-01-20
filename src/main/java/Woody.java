@@ -11,7 +11,7 @@ public class Woody {
                                              |___/
                 """;
         System.out.print(logo);
-        System.out.println("Hello! I'm Woody");
+        System.out.println("Howdy partner! I'm Woody");
         System.out.println("What can I do for you?");
 
         Scanner sc = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Woody {
             System.out.println(userCmd);
         }
 
-        System.out.println("Bye! Hope to see you again soon!");
+        System.out.println("Bye! See you soon partner!");
         sc.close();
     }
 }
