@@ -1,0 +1,9 @@
+todo buy Andy a gift
+deadline make a lunch reservation /by Thursday
+event meet Andy /from Friday 1pm /to 2pm
+list
+mark 1
+mark 3
+unmark 3
+list
+bye

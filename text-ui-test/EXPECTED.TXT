@@ -1,7 +1,32 @@
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
-
+ __        __              _       
+ \ \      / /__   ___   __| |_   _ 
+  \ \ /\ / / _ \ / _ \ / _` | | | |
+   \ V  V / (_) | (_) | (_| | |_| |
+    \_/\_/ \___/ \___/ \__,_|\__, |
+                             |___/
+Howdy partner! I'm Woody
+What can I do for you?
+Got it. I've added this task:
+[T][ ] buy Andy a gift
+Now you have 1 tasks in the list.
+Got it. I've added this task:
+[D][ ] make a lunch reservation (by: Thursday)
+Now you have 2 tasks in the list.
+Got it. I've added this task:
+[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+Now you have 3 tasks in the list.
+Here are the tasks in your list:
+1.[T][ ] buy Andy a gift
+2.[D][ ] make a lunch reservation (by: Thursday)
+3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+Yee-haw! I've marked this task as done:
+[T][X] buy Andy a gift
+Yee-haw! I've marked this task as done:
+[E][X] meet Andy (from: Friday 1pm to: 2pm)
+Alright! I've marked this task as not done yet:
+[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+Here are the tasks in your list:
+1.[T][X] buy Andy a gift
+2.[D][ ] make a lunch reservation (by: Thursday)
+3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+Bye! See you soon partner!
