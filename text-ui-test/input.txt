@@ -17,4 +17,7 @@ list
 delete two
 delete 2
 list
+mark 3
+unmark 3
+delete 3
 bye

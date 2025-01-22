@@ -28,7 +28,7 @@ public class Woody {
         System.out.printf("Now you have %d tasks in the list.%n", tasks.size());
     }
 
-    private static void deleteTask(String args) throws InvalidArgumentsException {
+    private static void deleteTask(String args) throws InvalidArgumentsException, TaskNotFoundException {
         checkIfDetailsIsEmpty(args);
         int taskIdx = -1;
         try {
@@ -36,12 +36,17 @@ public class Woody {
         } catch (NumberFormatException e) {
             throw new InvalidArgumentsException("\"delete\" requires an item number.");
         }
-        Task task = tasks.remove(taskIdx);
-        System.out.println("Got it. I've removed this task:\n" + task);
-        System.out.printf("Now you have %d tasks in the list.%n", tasks.size());
+        try {
+            Task task = tasks.remove(taskIdx);
+            System.out.println("Got it. I've removed this task:\n" + task);
+            System.out.printf("Now you have %d tasks in the list.%n", tasks.size());
+        } catch (IndexOutOfBoundsException e) {
+            throw new TaskNotFoundException();
+        }
     }
 
-    private static void setTaskStatus(String args, boolean isDone) throws InvalidArgumentsException {
+    private static void setTaskStatus(String args, boolean isDone)
+            throws InvalidArgumentsException, TaskNotFoundException {
         checkIfDetailsIsEmpty(args);
         int taskIdx = -1;
         try {
@@ -49,14 +54,18 @@ public class Woody {
         } catch (NumberFormatException e) {
             throw new InvalidArgumentsException("\"mark\"/\"unmark\" requires an item number.");
         }
-        if (isDone) {
-            tasks.get(taskIdx).markAsDone();
-            System.out.println("Yee-haw! I've marked this task as done:");
-        } else {
-            tasks.get(taskIdx).markAsNotDone();
-            System.out.println("Alright! I've marked this task as not done yet:");
+        try {
+            if (isDone) {
+                tasks.get(taskIdx).markAsDone();
+                System.out.println("Yee-haw! I've marked this task as done:");
+            } else {
+                tasks.get(taskIdx).markAsNotDone();
+                System.out.println("Alright! I've marked this task as not done yet:");
+            }
+            System.out.println(tasks.get(taskIdx));
+        } catch (IndexOutOfBoundsException e) {
+            throw new TaskNotFoundException();
         }
-        System.out.println(tasks.get(taskIdx));
     }
 
     public static void main(String[] args) {
