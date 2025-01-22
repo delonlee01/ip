@@ -11,14 +11,14 @@ public class Woody {
             if (task == null) {
                 break;
             }
-            System.out.println(String.format("%d.%s", i + 1, task));
+            System.out.printf("%d.%s%n", i + 1, task);
         }
     }
 
     private static void addTask(Task task) {
         tasks[idx++] = task;
         System.out.println("Got it. I've added this task:\n" + task);
-        System.out.println(String.format("Now you have %d tasks in the list.", idx));
+        System.out.printf("Now you have %d tasks in the list.%n", idx);
     }
 
     private static void mark(int taskIdx) {
@@ -66,7 +66,7 @@ public class Woody {
                 Deadline deadline = new Deadline(tokens[0].strip(), tokens[1].strip());
                 addTask(deadline);
             } else if (action.startsWith("event")) {
-                String[] tokens = sc.nextLine().split("(\\/from|\\/to)");
+                String[] tokens = sc.nextLine().split("(/from|/to)");
                 Event event = new Event(tokens[0].strip(), tokens[1].strip(), tokens[2].strip());
                 addTask(event);
             } else {
