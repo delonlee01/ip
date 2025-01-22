@@ -37,4 +37,11 @@ Here are the tasks in your list:
 1.[T][X] buy Andy a gift
 2.[D][ ] make a lunch reservation (by: Thursday)
 3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+Something went wrong partner. "delete" requires an item number.
+Got it. I've removed this task:
+[D][ ] make a lunch reservation (by: Thursday)
+Now you have 2 tasks in the list.
+Here are the tasks in your list:
+1.[T][X] buy Andy a gift
+2.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
 Bye! See you soon partner!

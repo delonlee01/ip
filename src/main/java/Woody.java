@@ -1,12 +1,12 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Woody {
-    private static Task[] tasks = new Task[100];
-    private static int idx = 0;
+    private static ArrayList<Task> tasks = new ArrayList<Task>();
     private static final List<String> ALLOWED_COMMANDS = Arrays.asList("list", "todo", "deadline", "event", "mark",
-            "unmark", "bye");
+            "unmark", "delete", "bye");
 
     private static void checkIfDetailsIsEmpty(String details) throws InvalidArgumentsException {
         if (details.isBlank()) {
@@ -16,19 +16,29 @@ public class Woody {
 
     private static void displayTasks() {
         System.out.println("Here are the tasks in your list:");
-        for (int i = 0; i < tasks.length; i++) {
-            Task task = tasks[i];
-            if (task == null) {
-                break;
-            }
+        for (int i = 0; i < tasks.size(); i++) {
+            Task task = tasks.get(i);
             System.out.printf("%d.%s%n", i + 1, task);
         }
     }
 
     private static void addTask(Task task) {
-        tasks[idx++] = task;
+        tasks.add(task);
         System.out.println("Got it. I've added this task:\n" + task);
-        System.out.printf("Now you have %d tasks in the list.%n", idx);
+        System.out.printf("Now you have %d tasks in the list.%n", tasks.size());
+    }
+
+    private static void deleteTask(String args) throws InvalidArgumentsException {
+        checkIfDetailsIsEmpty(args);
+        int taskIdx = -1;
+        try {
+            taskIdx = Integer.parseInt(args) - 1;
+        } catch (NumberFormatException e) {
+            throw new InvalidArgumentsException("\"delete\" requires an item number.");
+        }
+        Task task = tasks.remove(taskIdx);
+        System.out.println("Got it. I've removed this task:\n" + task);
+        System.out.printf("Now you have %d tasks in the list.%n", tasks.size());
     }
 
     private static void setTaskStatus(String args, boolean isDone) throws InvalidArgumentsException {
@@ -40,13 +50,13 @@ public class Woody {
             throw new InvalidArgumentsException("\"mark\"/\"unmark\" requires an item number.");
         }
         if (isDone) {
-            tasks[taskIdx].markAsDone();
+            tasks.get(taskIdx).markAsDone();
             System.out.println("Yee-haw! I've marked this task as done:");
         } else {
-            tasks[taskIdx].markAsNotDone();
+            tasks.get(taskIdx).markAsNotDone();
             System.out.println("Alright! I've marked this task as not done yet:");
         }
-        System.out.println(tasks[taskIdx]);
+        System.out.println(tasks.get(taskIdx));
     }
 
     public static void main(String[] args) {
@@ -104,6 +114,9 @@ public class Woody {
                 }
                 if (action.equals("unmark")) {
                     setTaskStatus(actionArgs, false);
+                }
+                if (action.equals("delete")) {
+                    deleteTask(actionArgs);
                 }
             } catch (WoodyException e) {
                 System.out.println(e);
