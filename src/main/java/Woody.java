@@ -1,8 +1,18 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Woody {
     private static Task[] tasks = new Task[100];
     private static int idx = 0;
+    private static final List<String> ALLOWED_COMMANDS = Arrays.asList("list", "todo", "deadline", "event", "mark",
+            "unmark", "bye");
+
+    private static void checkIfDetailsIsEmpty(String details) throws InvalidArgumentsException {
+        if (details.isBlank()) {
+            throw new InvalidArgumentsException("The details cannot be empty.");
+        }
+    }
 
     private static void displayTasks() {
         System.out.println("Here are the tasks in your list:");
@@ -21,15 +31,21 @@ public class Woody {
         System.out.printf("Now you have %d tasks in the list.%n", idx);
     }
 
-    private static void mark(int taskIdx) {
-        tasks[taskIdx].markAsDone();
-        System.out.println("Yee-haw! I've marked this task as done:");
-        System.out.println(tasks[taskIdx]);
-    }
-
-    private static void unmark(int taskIdx) {
-        tasks[taskIdx].markAsNotDone();
-        System.out.println("Alright! I've marked this task as not done yet:");
+    private static void setTaskStatus(String args, boolean isDone) throws InvalidArgumentsException {
+        checkIfDetailsIsEmpty(args);
+        int taskIdx = -1;
+        try {
+            taskIdx = Integer.parseInt(args) - 1;
+        } catch (NumberFormatException e) {
+            throw new InvalidArgumentsException("\"mark\"/\"unmark\" requires an item number.");
+        }
+        if (isDone) {
+            tasks[taskIdx].markAsDone();
+            System.out.println("Yee-haw! I've marked this task as done:");
+        } else {
+            tasks[taskIdx].markAsNotDone();
+            System.out.println("Alright! I've marked this task as not done yet:");
+        }
         System.out.println(tasks[taskIdx]);
     }
 
@@ -49,28 +65,48 @@ public class Woody {
         Scanner sc = new Scanner(System.in);
         while (true) {
             String action = sc.next();
-            if (action.equals("bye")) {
-                break;
-            }
-            if (action.equals("list")) {
-                displayTasks();
-            } else if (action.startsWith("mark")) {
-                mark(Integer.parseInt(sc.next()) - 1);
-            } else if (action.startsWith("unmark")) {
-                unmark(Integer.parseInt(sc.next()) - 1);
-            } else if (action.startsWith("todo")) {
-                Todo todo = new Todo(sc.nextLine().strip());
-                addTask(todo);
-            } else if (action.startsWith("deadline")) {
-                String[] tokens = sc.nextLine().split(" /by ");
-                Deadline deadline = new Deadline(tokens[0].strip(), tokens[1].strip());
-                addTask(deadline);
-            } else if (action.startsWith("event")) {
-                String[] tokens = sc.nextLine().split("(/from|/to)");
-                Event event = new Event(tokens[0].strip(), tokens[1].strip(), tokens[2].strip());
-                addTask(event);
-            } else {
-                continue;
+            try {
+                String actionArgs = sc.nextLine().strip();
+                if (!ALLOWED_COMMANDS.contains(action)) {
+                    throw new InvalidCommandException(action);
+                }
+                if (action.equals("bye")) {
+                    break;
+                }
+                if (action.equals("list")) {
+                    displayTasks();
+                }
+                if (action.equals("todo")) {
+                    checkIfDetailsIsEmpty(actionArgs);
+                    Todo task = new Todo(actionArgs);
+                    addTask(task);
+                }
+                if (action.equals("deadline")) {
+                    checkIfDetailsIsEmpty(actionArgs);
+                    String[] tokens = actionArgs.split(" /by ");
+                    if (tokens.length != 2) {
+                        throw new InvalidArgumentsException("\"deadline\" requires a description, and by.");
+                    }
+                    Deadline task = new Deadline(tokens[0], tokens[1]);
+                    addTask(task);
+                }
+                if (action.equals("event")) {
+                    checkIfDetailsIsEmpty(actionArgs);
+                    String[] tokens = actionArgs.split("(/from|/to)");
+                    if (tokens.length != 3) {
+                        throw new InvalidArgumentsException("\"event\" requires a description, from, and to.");
+                    }
+                    Event task = new Event(tokens[0].strip(), tokens[1].strip(), tokens[2].strip());
+                    addTask(task);
+                }
+                if (action.equals("mark")) {
+                    setTaskStatus(actionArgs, true);
+                }
+                if (action.equals("unmark")) {
+                    setTaskStatus(actionArgs, false);
+                }
+            } catch (WoodyException e) {
+                System.out.println(e);
             }
         }
 
