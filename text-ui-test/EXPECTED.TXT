@@ -11,39 +11,45 @@ Something went wrong partner. The details cannot be empty.
 Got it. I've added this task:
 [T][ ] buy Andy a gift
 Now you have 1 tasks in the list.
-Something went wrong partner. "deadline" requires a description, and by.
+Something went wrong partner. "deadline" requires a description, and '/by'.
+Something went wrong partner. "deadline" requires '/by' in the format: dd/MM/yyyy.
 Got it. I've added this task:
-[D][ ] make a lunch reservation (by: Thursday)
+[D][ ] make a lunch reservation (by: 31 Jan 2025)
 Now you have 2 tasks in the list.
-Something went wrong partner. "event" requires a description, from, and to.
-Something went wrong partner. "event" requires a description, from, and to.
-Something went wrong partner. "event" requires a description, from, and to.
+Something went wrong partner. "event" requires a description, '/from', and '/to'.
+Something went wrong partner. "event" requires a description, '/from', and '/to'.
+Something went wrong partner. "event" requires a description, '/from', and '/to'.
+Something went wrong partner. "event" requires '/from' and '/to' in the format: dd/MM/yyyy.
 Got it. I've added this task:
-[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Now you have 3 tasks in the list.
+Got it. I've added this task:
+[D][ ] collect flowers (by: 01 Feb 2025)
+Now you have 4 tasks in the list.
 Here are the tasks in your list:
 1.[T][ ] buy Andy a gift
-2.[D][ ] make a lunch reservation (by: Thursday)
-3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+2.[D][ ] make a lunch reservation (by: 31 Jan 2025)
+3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
+4.[D][ ] collect flowers (by: 01 Feb 2025)
 Something went wrong partner. "mark" requires an item number.
 Yee-haw! I've marked this task as done:
 [T][X] buy Andy a gift
 Yee-haw! I've marked this task as done:
-[E][X] meet Andy (from: Friday 1pm to: 2pm)
+[E][X] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Something went wrong partner. "unmark" requires an item number.
 Alright! I've marked this task as not done yet:
-[E][ ] meet Andy (from: Friday 1pm to: 2pm)
-Here are the tasks in your list:
-1.[T][X] buy Andy a gift
-2.[D][ ] make a lunch reservation (by: Thursday)
-3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
+Here are the tasks for 01 Feb 2025:
+3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
+4.[D][ ] collect flowers (by: 01 Feb 2025)
 Something went wrong partner. "delete" requires an item number.
 Got it. I've removed this task:
-[D][ ] make a lunch reservation (by: Thursday)
-Now you have 2 tasks in the list.
+[D][ ] make a lunch reservation (by: 31 Jan 2025)
+Now you have 3 tasks in the list.
 Here are the tasks in your list:
 1.[T][X] buy Andy a gift
-2.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+2.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
+3.[D][ ] collect flowers (by: 01 Feb 2025)
 Something went wrong partner. The specified task does not exist.
 Something went wrong partner. The specified task does not exist.
 Something went wrong partner. The specified task does not exist.
