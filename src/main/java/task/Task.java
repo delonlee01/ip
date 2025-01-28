@@ -1,10 +1,8 @@
-public class Task {
+package task;
+
+public abstract class Task {
     protected String description;
     protected boolean isDone = false;
-
-    public Task(String description) {
-        this.description = description;
-    }
 
     public void markAsDone() {
         this.isDone = true;
@@ -17,6 +15,8 @@ public class Task {
     public String getStatusIcon() {
         return this.isDone ? "X" : " ";
     }
+
+    public abstract String toDataString();
 
     @Override
     public String toString() {

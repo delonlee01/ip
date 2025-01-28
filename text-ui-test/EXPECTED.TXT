@@ -25,12 +25,12 @@ Here are the tasks in your list:
 1.[T][ ] buy Andy a gift
 2.[D][ ] make a lunch reservation (by: Thursday)
 3.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
-Something went wrong partner. "mark"/"unmark" requires an item number.
+Something went wrong partner. "mark" requires an item number.
 Yee-haw! I've marked this task as done:
 [T][X] buy Andy a gift
 Yee-haw! I've marked this task as done:
 [E][X] meet Andy (from: Friday 1pm to: 2pm)
-Something went wrong partner. "mark"/"unmark" requires an item number.
+Something went wrong partner. "unmark" requires an item number.
 Alright! I've marked this task as not done yet:
 [E][ ] meet Andy (from: Friday 1pm to: 2pm)
 Here are the tasks in your list:
