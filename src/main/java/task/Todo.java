@@ -1,10 +1,8 @@
 package task;
 
 public class Todo extends Task {
-    protected String due;
-
-    public Todo(String description) {
-        super(description);
+    public Todo(String args) {
+        this.description = args.strip();
     }
 
     @Override

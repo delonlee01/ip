@@ -1,12 +1,8 @@
 package task;
 
-public class Task {
+public abstract class Task {
     protected String description;
     protected boolean isDone = false;
-
-    public Task(String description) {
-        this.description = description;
-    }
 
     public void markAsDone() {
         this.isDone = true;

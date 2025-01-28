@@ -1,13 +1,19 @@
 package task;
 
+import exception.InvalidArgumentsException;
+
 public class Event extends Task {
     protected String from;
     protected String to;
 
-    public Event(String description, String from, String to) {
-        super(description);
-        this.from = from;
-        this.to = to;
+    public Event(String args) throws InvalidArgumentsException {
+        String[] tokens = args.split("(/from|/to)");
+        if (tokens.length != 3) {
+            throw new InvalidArgumentsException("\"event\" requires a description, from, and to.");
+        }
+        this.description = tokens[0].strip();
+        this.from = tokens[1].strip();
+        this.to = tokens[2].strip();
     }
 
     @Override
