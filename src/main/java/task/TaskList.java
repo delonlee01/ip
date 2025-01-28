@@ -1,5 +1,9 @@
 package task;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +16,7 @@ import java.nio.file.Paths;
 
 import java.util.ArrayList;
 
+import exception.InvalidArgumentsException;
 import exception.TaskNotFoundException;
 import exception.WoodyException;
 
@@ -80,6 +85,24 @@ public class TaskList {
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             System.out.printf("%d.%s%n", i + 1, task);
+        }
+    }
+
+    public static void printTasksByDate(String args) throws InvalidArgumentsException {
+        LocalDate date;
+        try {
+            date = LocalDate.parse(args, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        } catch (DateTimeParseException e) {
+            throw new InvalidArgumentsException("Date needs to be in the format: dd/MM/yyyy.");
+        }
+        System.out.printf("Here are the tasks for %s:%n",
+                date.format(DateTimeFormatter.ofPattern("dd MMM yyyy")));
+        for (int i = 0; i < tasks.size(); i++) {
+            Task task = tasks.get(i);
+            if (task instanceof Deadline && ((Deadline) task).by.equals(date)
+                    || task instanceof Event && (((Event) task).from.equals(date) || ((Event) task).to.equals(date))) {
+                System.out.printf("%d.%s%n", i + 1, task);
+            }
         }
     }
 

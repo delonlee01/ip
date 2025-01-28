@@ -13,7 +13,7 @@ import task.Todo;
 
 public class Woody {
     private static final List<String> ALLOWED_COMMANDS = Arrays.asList("list", "todo", "deadline", "event", "mark",
-            "unmark", "delete", "bye");
+            "unmark", "delete", "bye", "check");
 
     public static void main(String[] args) {
         try {
@@ -59,6 +59,8 @@ public class Woody {
                     TaskList.insert(new Deadline(actionArgs));
                 } else if (action.equals("event")) {
                     TaskList.insert(new Event(actionArgs));
+                } else if (action.equals("check")) {
+                    TaskList.printTasksByDate(actionArgs);
                 } else {
                     if (!actionArgs.matches("^[0-9]+$")) {
                         throw new InvalidArgumentsException(String.format("\"%s\" requires an item number.", action));
