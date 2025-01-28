@@ -15,6 +15,12 @@ public class Deadline extends Task {
     }
 
     @Override
+    public String toDataString() {
+        int status = this.isDone ? 1 : 0;
+        return String.format("D|%d|%s /by %s", status, this.description, this.by);
+    }
+
+    @Override
     public String toString() {
         return String.format("[D]%s (by: %s)", super.toString(), this.by);
     }

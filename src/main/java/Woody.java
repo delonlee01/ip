@@ -16,6 +16,13 @@ public class Woody {
             "unmark", "delete", "bye");
 
     public static void main(String[] args) {
+        try {
+            TaskList.loadFromLocalStorage();
+        } catch (WoodyException e) {
+            System.out.println(e);
+            return;
+        }
+
         String logo = """
                  __        __              _      \s
                  \\ \\      / /__   ___   __| |_   _\s
@@ -48,32 +55,24 @@ public class Woody {
                 }
                 if (action.equals("todo")) {
                     TaskList.insert(new Todo(actionArgs));
-                    continue;
-                }
-                if (action.equals("deadline")) {
+                } else if (action.equals("deadline")) {
                     TaskList.insert(new Deadline(actionArgs));
-                    continue;
-                }
-                if (action.equals("event")) {
+                } else if (action.equals("event")) {
                     TaskList.insert(new Event(actionArgs));
-                    continue;
+                } else {
+                    if (!actionArgs.matches("^[0-9]+$")) {
+                        throw new InvalidArgumentsException(String.format("\"%s\" requires an item number.", action));
+                    }
+                    int idx = Integer.parseInt(actionArgs) - 1;
+                    if (action.equals("mark")) {
+                        TaskList.markTaskAsDone(idx);
+                    } else if (action.equals("unmark")) {
+                        TaskList.markTaskAsNotDone(idx);
+                    } else {
+                        TaskList.delete(idx);
+                    }
                 }
-                if (!actionArgs.matches("^[0-9]+$")) {
-                    throw new InvalidArgumentsException(String.format("\"%s\" requires an item number.", action));
-                }
-                int idx = Integer.parseInt(actionArgs) - 1;
-                if (action.equals("mark")) {
-                    TaskList.markTaskAsDone(idx);
-                    continue;
-                }
-                if (action.equals("unmark")) {
-                    TaskList.markTaskAsNotDone(idx);
-                    continue;
-                }
-                if (action.equals("delete")) {
-                    TaskList.delete(idx);
-                    continue;
-                }
+                TaskList.writeToLocalStorage();
             } catch (WoodyException e) {
                 System.out.println(e);
             }

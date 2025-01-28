@@ -1,11 +1,79 @@
 package task;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import java.nio.file.Paths;
+
 import java.util.ArrayList;
 
 import exception.TaskNotFoundException;
+import exception.WoodyException;
 
 public class TaskList {
-    private static ArrayList<Task> tasks = new ArrayList<>();
+    private static final ArrayList<Task> tasks = new ArrayList<>();
+    private static final String DATA_PATH = Paths.get(".", "data", "woody.txt").toString();
+
+    public static void loadFromLocalStorage() throws WoodyException {
+        File data = new File(DATA_PATH);
+        try {
+            if (!data.exists()) {
+                data.getParentFile().mkdirs();
+                data.createNewFile();
+            } else {
+                BufferedReader reader = new BufferedReader(new FileReader(data));
+                while (true) {
+                    String line = reader.readLine();
+                    if (line == null) {
+                        break;
+                    }
+                    String[] tokens = line.split("\\|");
+                    Task task;
+                    switch (tokens[0]) {
+                    case "T":
+                        task = new Todo(tokens[2]);
+                        break;
+                    case "D":
+                        task = new Deadline(tokens[2]);
+                        break;
+                    case "E":
+                        task = new Event(tokens[2]);
+                        break;
+                    default:
+                        continue;
+                    }
+                    if (tokens[1].equals("1")) {
+                        task.markAsDone();
+                    } else {
+                        task.markAsNotDone();
+                    }
+                    tasks.add(task);
+                }
+                reader.close();
+            }
+        } catch (FileNotFoundException e) {
+            throw new WoodyException("Unable to find the local storage file.");
+        } catch (IOException e) {
+            throw new WoodyException("Unable to create the local storage file.");
+        }
+    }
+
+    public static void writeToLocalStorage() throws WoodyException {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(DATA_PATH));
+            for (Task task : tasks) {
+                writer.write(task.toDataString() + "\n");
+            }
+            writer.close();
+        } catch (IOException e) {
+            throw new WoodyException("Unable to write to the local storage file.");
+        }
+    }
 
     public static void printTasks() {
         System.out.println("Here are the tasks in your list:");
