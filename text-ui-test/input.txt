@@ -3,10 +3,12 @@ todo
 todo buy Andy a gift
 deadline make a lunch reservation
 deadline make a lunch reservation /by Thursday
+deadline make a lunch reservation /by 31/01/2025
 event meet Andy
 event meet Andy /from Friday 1pm
 event meet Andy /to 2pm
 event meet Andy /from Friday 1pm /to 2pm
+event meet Andy /from 01/02/2025 /to 01/02/2025
 list
 mark one
 mark 1

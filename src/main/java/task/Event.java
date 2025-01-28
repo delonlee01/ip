@@ -13,14 +13,14 @@ public class Event extends Task {
     public Event(String args) throws InvalidArgumentsException {
         String[] tokens = args.split("(/from|/to)");
         if (tokens.length != 3) {
-            throw new InvalidArgumentsException("\"event\" requires a description, from, and to.");
+            throw new InvalidArgumentsException("\"event\" requires a description, '/from', and '/to'.");
         }
         this.description = tokens[0].strip();
         try {
             this.from = LocalDate.parse(tokens[1].strip(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.to = LocalDate.parse(tokens[2].strip(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         } catch (DateTimeParseException e) {
-            throw new InvalidArgumentsException("\"event\" requires from and to in the format: dd/MM/yyyy.");
+            throw new InvalidArgumentsException("\"event\" requires '/from' and '/to' in the format: dd/MM/yyyy.");
         }
     }
 

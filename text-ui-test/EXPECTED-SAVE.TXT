@@ -8,5 +8,5 @@ Howdy partner! I'm Woody
 What can I do for you?
 Here are the tasks in your list:
 1.[T][X] buy Andy a gift
-2.[E][ ] meet Andy (from: Friday 1pm to: 2pm)
+2.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Bye! See you soon partner!
