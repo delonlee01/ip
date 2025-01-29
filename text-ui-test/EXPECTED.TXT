@@ -6,20 +6,20 @@
                              |___/
 Howdy partner! I'm Woody
 What can I do for you?
-Something went wrong partner. "todoo" is not a recognized command.
-Something went wrong partner. The details cannot be empty.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Got it. I've added this task:
 [T][ ] buy Andy a gift
 Now you have 1 tasks in the list.
-Something went wrong partner. "deadline" requires a description, and '/by'.
-Something went wrong partner. "deadline" requires '/by' in the format: dd/MM/yyyy.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Got it. I've added this task:
 [D][ ] make a lunch reservation (by: 31 Jan 2025)
 Now you have 2 tasks in the list.
-Something went wrong partner. "event" requires a description, '/from', and '/to'.
-Something went wrong partner. "event" requires a description, '/from', and '/to'.
-Something went wrong partner. "event" requires a description, '/from', and '/to'.
-Something went wrong partner. "event" requires '/from' and '/to' in the format: dd/MM/yyyy.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Got it. I've added this task:
 [E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Now you have 3 tasks in the list.
@@ -31,18 +31,18 @@ Here are the tasks in your list:
 2.[D][ ] make a lunch reservation (by: 31 Jan 2025)
 3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 4.[D][ ] collect flowers (by: 01 Feb 2025)
-Something went wrong partner. "mark" requires an item number.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Yee-haw! I've marked this task as done:
 [T][X] buy Andy a gift
 Yee-haw! I've marked this task as done:
 [E][X] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
-Something went wrong partner. "unmark" requires an item number.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Alright! I've marked this task as not done yet:
 [E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Here are the tasks for 01 Feb 2025:
 3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 4.[D][ ] collect flowers (by: 01 Feb 2025)
-Something went wrong partner. "delete" requires an item number.
+Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Got it. I've removed this task:
 [D][ ] make a lunch reservation (by: 31 Jan 2025)
 Now you have 3 tasks in the list.
