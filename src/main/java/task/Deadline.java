@@ -2,24 +2,17 @@ package task;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-
-import exception.InvalidArgumentsException;
 
 public class Deadline extends Task {
     protected LocalDate by;
 
-    public Deadline(String args) throws InvalidArgumentsException {
-        String[] tokens = args.split(" /by ");
-        if (tokens.length != 2) {
-            throw new InvalidArgumentsException("\"deadline\" requires a description, and '/by'.");
-        }
-        this.description = tokens[0].strip();
-        try {
-            this.by = LocalDate.parse(tokens[1].strip(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        } catch (DateTimeParseException e) {
-            throw new InvalidArgumentsException("\"deadline\" requires '/by' in the format: dd/MM/yyyy.");
-        }
+    public Deadline(String description, LocalDate by) {
+        this.description = description;
+        this.by = by;
+    }
+
+    public LocalDate getBy() {
+        return this.by;
     }
 
     @Override
