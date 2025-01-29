@@ -18,13 +18,23 @@ public class Ui {
             """;
     private final BufferedReader reader;
     private final PrintWriter writer;
+    private boolean isSuppressed;
 
     public Ui() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
         this.writer = new PrintWriter(System.out);
+        this.isSuppressed = false;
+    }
+
+    public Ui toSuppressOutput() {
+        this.isSuppressed = true;
+        return this;
     }
 
     public void printWelcome() {
+        if (isSuppressed) {
+            return;
+        }
         this.writer.print(LOGO);
         this.writer.println("Howdy partner! I'm Woody");
         this.writer.println("What can I do for you?");
@@ -40,6 +50,9 @@ public class Ui {
     }
 
     public void writeOutput(String text) {
+        if (isSuppressed) {
+            return;
+        }
         this.writer.println(text);
         this.writer.flush();
     }

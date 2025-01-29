@@ -38,7 +38,8 @@ public class EventCommand extends Command {
     public void execute(TaskList taskList, Ui ui) {
         Event task = new Event(this.description, this.from, this.to);
         taskList.addTask(task);
-        System.out.println("Got it. I've added this task:\n" + task);
-        System.out.printf("Now you have %d tasks in the list.\n", taskList.getTaskCount());
+        ui.writeOutput("Got it. I've added this task:");
+        ui.writeOutput(task.toString());
+        ui.writeOutput(String.format("Now you have %d tasks in the list.", taskList.getTaskCount()));
     }
 }

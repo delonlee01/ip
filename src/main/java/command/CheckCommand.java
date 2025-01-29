@@ -57,4 +57,9 @@ public class CheckCommand extends Command {
             ui.writeOutput(String.format("%d.%s", i + 1, task));
         }
     }
+
+    @Override
+    public boolean isReadOnly() {
+        return true;
+    }
 }

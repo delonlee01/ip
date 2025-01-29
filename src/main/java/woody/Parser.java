@@ -20,10 +20,10 @@ public class Parser {
             TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class, UnmarkCommand.class,
             DeleteCommand.class, ByeCommand.class);
 
-    public Command parse(String text) throws WoodyException {
+    private Command parse(String text, List<Class<? extends Command>> commands) throws WoodyException {
         Class<?>[] params = new Class[]{String.class};
         Object[] args = new Object[]{text};
-        for (var commandClass : ALLOWED_COMMANDS) {
+        for (var commandClass : commands) {
             try {
                 Command command = (Command) commandClass.getMethod("createCommandIfValid", params).invoke(null, args);
                 if (command != null) {
@@ -34,5 +34,15 @@ public class Parser {
             }
         }
         return null;
+    }
+
+    public Command parseInput(String text) throws WoodyException {
+        return parse(text, ALLOWED_COMMANDS);
+    }
+
+    public Command parseData(String text) throws WoodyException {
+        List<Class<? extends Command>> taskCommands = List.of(TodoCommand.class, DeadlineCommand.class,
+                EventCommand.class);
+        return parse(text, taskCommands);
     }
 }

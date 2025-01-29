@@ -8,7 +8,7 @@ public class Todo extends Task {
     @Override
     public String toDataString() {
         int status = this.isDone ? 1 : 0;
-        return String.format("T|%d|%s", status, this.description);
+        return String.format("%d|todo %s", status, this.description);
     }
 
     @Override
