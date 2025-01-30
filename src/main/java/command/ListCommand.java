@@ -4,12 +4,21 @@ import java.util.ArrayList;
 
 import task.Task;
 import task.TaskList;
-
 import woody.Ui;
 
+/**
+ * Represents a list command in the chatbot system.
+ */
 public class ListCommand extends Command {
-    protected static String REGEX_PATTERN = "^list$";
+    private static final String REGEX_PATTERN = "^list$";
 
+    /**
+     * Returns a ListCommand if the specified input matches the usage
+     * format.
+     *
+     * @param input string representation of command
+     * @return ListCommand
+     */
     public static ListCommand createCommandIfValid(String input) {
         if (input.matches(REGEX_PATTERN)) {
             return new ListCommand();

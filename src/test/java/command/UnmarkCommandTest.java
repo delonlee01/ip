@@ -1,20 +1,5 @@
 package command;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import exception.TaskNotFoundException;
-
-import task.TaskList;
-import task.Todo;
-
-import woody.Ui;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -22,8 +7,21 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import exception.TaskNotFoundException;
+import task.TaskList;
+import task.Todo;
+import woody.Ui;
+
 public class UnmarkCommandTest {
-    private final UnmarkCommand COMMAND = new UnmarkCommand(0);
+    private static final UnmarkCommand COMMAND = new UnmarkCommand(0);
 
     @Test
     public void createCommandIfValid_invalid_success() {

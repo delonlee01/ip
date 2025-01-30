@@ -1,29 +1,27 @@
 package command;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import java.util.ArrayList;
-
-import task.Task;
-import task.TaskList;
-import task.Todo;
-
-import woody.Ui;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import task.Task;
+import task.TaskList;
+import task.Todo;
+import woody.Ui;
+
 public class ListCommandTest {
-    private final ListCommand COMMAND = new ListCommand();
+    private static final ListCommand COMMAND = new ListCommand();
 
     @Test
     public void createCommandIfValid_invalid_success() {
