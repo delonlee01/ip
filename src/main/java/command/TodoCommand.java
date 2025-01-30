@@ -9,7 +9,7 @@ import woody.Ui;
 
 public class TodoCommand extends Command {
     private static final Pattern REGEX_PATTERN = Pattern.compile("^todo (?<description>.+)$");
-    private String description;
+    private final String description;
 
     public TodoCommand(String description) {
         this.description = description;

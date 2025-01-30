@@ -14,8 +14,8 @@ import task.Todo;
 import woody.Ui;
 
 public class CheckCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern.compile("^check (?<date>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$");
-    private LocalDate date;
+    private static final Pattern REGEX_PATTERN = Pattern.compile("^check (?<date>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
+    private final LocalDate date;
 
     public CheckCommand(LocalDate date) {
         this.date = date;

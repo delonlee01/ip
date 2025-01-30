@@ -4,7 +4,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class ByeCommand extends Command {
-    private static String REGEX_PATTERN = "^bye$";
+    private static final String REGEX_PATTERN = "^bye$";
 
     public static ByeCommand createCommandIfValid(String input) {
         if (input.matches(ByeCommand.REGEX_PATTERN)) {

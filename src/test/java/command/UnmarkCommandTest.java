@@ -21,7 +21,7 @@ import task.Todo;
 import woody.Ui;
 
 public class UnmarkCommandTest {
-    private final UnmarkCommand COMMAND = new UnmarkCommand(0);
+    private static final UnmarkCommand COMMAND = new UnmarkCommand(0);
 
     @Test
     public void createCommandIfValid_invalid_success() {

@@ -21,7 +21,7 @@ import task.Todo;
 import woody.Ui;
 
 public class DeleteCommandTest {
-    private final DeleteCommand COMMAND = new DeleteCommand(0);
+    private static final DeleteCommand COMMAND = new DeleteCommand(0);
 
     @Test
     public void createCommandIfValid_invalid_success() {

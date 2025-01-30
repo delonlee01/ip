@@ -7,7 +7,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class ListCommand extends Command {
-    protected static String REGEX_PATTERN = "^list$";
+    private static final String REGEX_PATTERN = "^list$";
 
     public static ListCommand createCommandIfValid(String input) {
         if (input.matches(REGEX_PATTERN)) {

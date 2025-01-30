@@ -19,7 +19,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class DeadlineCommandTest {
-    private final DeadlineCommand COMMAND = new DeadlineCommand("test task 1",
+    private static final DeadlineCommand COMMAND = new DeadlineCommand("test task 1",
             LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 
     @Test

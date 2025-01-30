@@ -8,8 +8,10 @@ import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.Test;
 
 public class EventTest {
-    private final LocalDate FROM_DATE = LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final LocalDate TO_DATE = LocalDate.parse("02/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate FROM_DATE = LocalDate.parse("01/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate TO_DATE = LocalDate.parse("02/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
     @Test
     public void getFrom_success() {

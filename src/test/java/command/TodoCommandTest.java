@@ -17,7 +17,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class TodoCommandTest {
-    private final TodoCommand COMMAND = new TodoCommand("test task 1");
+    private static final TodoCommand COMMAND = new TodoCommand("test task 1");
 
     @Test
     public void createCommandIfValid_invalid_success() {

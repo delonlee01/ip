@@ -18,7 +18,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class ByeCommandTest {
-    private final ByeCommand COMMAND = new ByeCommand();
+    private static final ByeCommand COMMAND = new ByeCommand();
 
     @Test
     public void createCommandIfValid_invalid_success() {

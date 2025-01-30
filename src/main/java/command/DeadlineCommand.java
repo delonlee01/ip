@@ -10,10 +10,10 @@ import task.TaskList;
 import woody.Ui;
 
 public class DeadlineCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern
-            .compile("^deadline (?<description>.+) \\/by (?<by>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$");
-    private String description;
-    private LocalDate by;
+    private static final Pattern REGEX_PATTERN = Pattern
+            .compile("^deadline (?<description>.+) /by (?<by>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
+    private final String description;
+    private final LocalDate by;
 
     public DeadlineCommand(String description, LocalDate by) {
         this.description = description;

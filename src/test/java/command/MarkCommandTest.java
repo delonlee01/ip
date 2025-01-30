@@ -21,7 +21,7 @@ import task.Todo;
 import woody.Ui;
 
 public class MarkCommandTest {
-    private final MarkCommand COMMAND = new MarkCommand(0);
+    private static final MarkCommand COMMAND = new MarkCommand(0);
 
     @Test
     public void createCommandIfValid_invalid_success() {

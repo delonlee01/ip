@@ -15,9 +15,9 @@ import command.UnmarkCommand;
 import exception.WoodyException;
 
 public class Parser {
-    private final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class, CheckCommand.class,
-            TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class, UnmarkCommand.class,
-            DeleteCommand.class, ByeCommand.class);
+    private static final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class,
+            CheckCommand.class, TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class,
+            UnmarkCommand.class, DeleteCommand.class, ByeCommand.class);
 
     private Command parse(String text, List<Class<? extends Command>> commands) throws WoodyException {
         Class<?>[] params = new Class[]{String.class};

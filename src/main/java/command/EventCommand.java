@@ -10,11 +10,12 @@ import task.TaskList;
 import woody.Ui;
 
 public class EventCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern.compile(
-            "^event (?<description>.+) \\/from (?<from>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4}) \\/to (?<to>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$");
-    private String description;
-    private LocalDate from;
-    private LocalDate to;
+    private static final Pattern REGEX_PATTERN = Pattern.compile(
+            "^event (?<description>.+) /from (?<from>[0-9]{2}/[0-9]{2}/[0-9]{4})"
+                    + " /to (?<to>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
+    private final String description;
+    private final LocalDate from;
+    private final LocalDate to;
 
     public EventCommand(String description, LocalDate from, LocalDate to) {
         this.description = description;

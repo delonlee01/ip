@@ -9,8 +9,8 @@ import task.TaskList;
 import woody.Ui;
 
 public class MarkCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern.compile("^mark (?<index>\\d+)$");
-    private int index;
+    private static final Pattern REGEX_PATTERN = Pattern.compile("^mark (?<index>\\d+)$");
+    private final int index;
 
     public MarkCommand(int index) {
         this.index = index;

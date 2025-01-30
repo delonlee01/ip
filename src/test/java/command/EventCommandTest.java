@@ -19,7 +19,7 @@ import task.TaskList;
 import woody.Ui;
 
 public class EventCommandTest {
-    private final EventCommand COMMAND = new EventCommand("test task 1",
+    private static final EventCommand COMMAND = new EventCommand("test task 1",
             LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
             LocalDate.parse("02/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 

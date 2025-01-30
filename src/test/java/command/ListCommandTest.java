@@ -21,7 +21,7 @@ import task.Todo;
 import woody.Ui;
 
 public class ListCommandTest {
-    private final ListCommand COMMAND = new ListCommand();
+    private static final ListCommand COMMAND = new ListCommand();
 
     @Test
     public void createCommandIfValid_invalid_success() {

@@ -23,10 +23,13 @@ import task.TaskList;
 import woody.Ui;
 
 public class CheckCommandTest {
-    private final LocalDate DATE_1 = LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final LocalDate DATE_2 = LocalDate.parse("02/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final LocalDate DATE_3 = LocalDate.parse("03/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final CheckCommand COMMAND = new CheckCommand(DATE_2);
+    private static final LocalDate DATE_1 = LocalDate.parse("01/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate DATE_2 = LocalDate.parse("02/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate DATE_3 = LocalDate.parse("03/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final CheckCommand COMMAND = new CheckCommand(DATE_2);
 
     @Test
     public void createCommandIfValid_invalid_success() {

@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TaskListTest {
-    private final TaskList EMPTY_TASK_LIST = new TaskList();
-    private final Todo TASK_1 = new Todo("test task 1");
-    private final Todo TASK_2 = new Todo("test task 2");
+    private static final TaskList EMPTY_TASK_LIST = new TaskList();
+    private static final Todo TASK_1 = new Todo("test task 1");
+    private static final Todo TASK_2 = new Todo("test task 2");
     private TaskList taskList;
 
     @BeforeEach
