@@ -17,6 +17,7 @@ mark 3
 unmark three
 unmark 3
 check 01/02/2025
+find Andy
 delete two
 delete 2
 list

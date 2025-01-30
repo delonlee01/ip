@@ -42,6 +42,9 @@ Alright! I've marked this task as not done yet:
 Here are the tasks for 01 Feb 2025:
 3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 4.[D][ ] collect flowers (by: 01 Feb 2025)
+Here are the matching tasks in your list:
+1.[T][X] buy Andy a gift
+3.[E][ ] meet Andy (from: 01 Feb 2025 to: 01 Feb 2025)
 Something went wrong partner. The command entered is invalid or formatted incorrectly.
 Got it. I've removed this task:
 [D][ ] make a lunch reservation (by: 31 Jan 2025)
