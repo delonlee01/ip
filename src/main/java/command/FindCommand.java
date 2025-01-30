@@ -8,14 +8,29 @@ import task.Task;
 import task.TaskList;
 import woody.Ui;
 
+/**
+ * Represents a find command in the chatbot system.
+ */
 public class FindCommand extends Command {
     private static final Pattern REGEX_PATTERN = Pattern.compile("^find (?<keyword>.+)$");
     private final String keyword;
 
+    /**
+     * Constructs a command to find tasks with descriptions that contains the specified keyword.
+     *
+     * @param keyword word of interest
+     */
     public FindCommand(String keyword) {
         this.keyword = keyword;
     }
 
+    /**
+     * Returns a FindCommand if the specified input matches the usage
+     * format.
+     *
+     * @param input string representation of command
+     * @return FindCommand
+     */
     public static FindCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {
