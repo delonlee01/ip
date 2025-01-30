@@ -6,6 +6,9 @@ import task.TaskList;
 
 import command.Command;
 
+/**
+ * Represents the chatbot system.
+ */
 public class Woody {
     private static Ui ui;
     private static Parser parser;
