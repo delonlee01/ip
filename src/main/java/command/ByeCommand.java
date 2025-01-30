@@ -7,10 +7,6 @@ import woody.Ui;
 public class ByeCommand extends Command {
     private static String REGEX_PATTERN = "^bye$";
 
-    public static boolean isValid(String input) {
-        return input.matches(ByeCommand.REGEX_PATTERN);
-    }
-
     public static ByeCommand createCommandIfValid(String input) {
         if (input.matches(ByeCommand.REGEX_PATTERN)) {
             return new ByeCommand();
