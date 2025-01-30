@@ -24,9 +24,11 @@ import task.Todo;
 import woody.Ui;
 
 public class FindCommandTest {
-    private final LocalDate DATE_1 = LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final LocalDate DATE_2 = LocalDate.parse("02/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-    private final FindCommand COMMAND = new FindCommand("match");
+    private static final LocalDate DATE_1 = LocalDate.parse("01/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate DATE_2 = LocalDate.parse("02/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final FindCommand COMMAND = new FindCommand("match");
 
     @Test
     public void createCommandIfValid_invalid_success() {
