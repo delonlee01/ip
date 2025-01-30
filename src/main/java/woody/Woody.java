@@ -4,6 +4,9 @@ import command.Command;
 import exception.WoodyException;
 import task.TaskList;
 
+/**
+ * Represents the chatbot system.
+ */
 public class Woody {
     private static Ui ui;
     private static Parser parser;

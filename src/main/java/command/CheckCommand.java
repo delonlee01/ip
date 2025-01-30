@@ -13,14 +13,29 @@ import task.TaskList;
 import task.Todo;
 import woody.Ui;
 
+/**
+ * Represents a check command in the chatbot system.
+ */
 public class CheckCommand extends Command {
     private static final Pattern REGEX_PATTERN = Pattern.compile("^check (?<date>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
     private final LocalDate date;
 
+    /**
+     * Constructs a command to check for deadline/event tasks on the specified date.
+     *
+     * @param LocalDate date
+     */
     public CheckCommand(LocalDate date) {
         this.date = date;
     }
 
+    /**
+     * Returns a CheckCommand if the specified input matches the usage
+     * format.
+     *
+     * @param String input
+     * @return CheckCommand
+     */
     public static CheckCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {

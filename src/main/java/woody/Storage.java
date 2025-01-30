@@ -15,10 +15,19 @@ import exception.WoodyException;
 import task.Task;
 import task.TaskList;
 
+/**
+ * Represents a storage to read-write data locally in the chatbot system.
+ */
 public class Storage {
     private static final String DATA_PATH = Paths.get(".", "data", "woody.txt").toString();
     private Parser parser;
 
+    /**
+     * Constructs a storage with the specified parser.
+     *
+     * @param Parser parser
+     * @throws WoodyException
+     */
     public Storage(Parser parser) throws WoodyException {
         this.parser = parser;
         File data = new File(DATA_PATH);
@@ -32,6 +41,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Returns a TaskList object containing the tasks stored locally.
+     *
+     * @return TaskList
+     * @throws WoodyException
+     */
     public TaskList load() throws WoodyException {
         TaskList tasks = new TaskList();
         File data = new File(DATA_PATH);
@@ -62,6 +77,12 @@ public class Storage {
         return tasks;
     }
 
+    /**
+     * Stores all tasks in the specified TaskList object locally.
+     *
+     * @param TaskList taskList
+     * @throws WoodyException
+     */
     public void save(TaskList taskList) throws WoodyException {
         File data = new File(DATA_PATH);
         try {

@@ -9,17 +9,33 @@ import task.Deadline;
 import task.TaskList;
 import woody.Ui;
 
+/**
+ * Represents a deadline command in the chatbot system.
+ */
 public class DeadlineCommand extends Command {
     private static final Pattern REGEX_PATTERN = Pattern
             .compile("^deadline (?<description>.+) /by (?<by>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
     private final String description;
     private final LocalDate by;
 
+    /**
+     * Constructs a command to create a deadline task.
+     *
+     * @param String    description
+     * @param LocalDate by
+     */
     public DeadlineCommand(String description, LocalDate by) {
         this.description = description;
         this.by = by;
     }
 
+    /**
+     * Returns a DeadlineCommand if the specified input matches the
+     * usage format.
+     *
+     * @param String input
+     * @return DeadlineCommand
+     */
     public static DeadlineCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {
