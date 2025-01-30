@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 import task.TaskList;
 import task.Todo;
-
 import woody.Ui;
 
 public class TodoCommand extends Command {

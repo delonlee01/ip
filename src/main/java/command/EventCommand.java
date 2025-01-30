@@ -2,13 +2,11 @@ package command;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import task.Event;
 import task.TaskList;
-
 import woody.Ui;
 
 public class EventCommand extends Command {

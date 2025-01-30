@@ -2,8 +2,6 @@ package woody;
 
 import java.util.List;
 
-import exception.WoodyException;
-
 import command.ByeCommand;
 import command.CheckCommand;
 import command.Command;
@@ -14,6 +12,7 @@ import command.ListCommand;
 import command.MarkCommand;
 import command.TodoCommand;
 import command.UnmarkCommand;
+import exception.WoodyException;
 
 public class Parser {
     private final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class, CheckCommand.class,

@@ -7,16 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import java.nio.file.Paths;
-
-import exception.WoodyException;
-
-import task.Task;
-import task.TaskList;
 
 import command.Command;
 import command.MarkCommand;
+import exception.WoodyException;
+import task.Task;
+import task.TaskList;
 
 public class Storage {
     private static final String DATA_PATH = Paths.get(".", "data", "woody.txt").toString();

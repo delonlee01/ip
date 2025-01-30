@@ -1,28 +1,26 @@
 package command;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
-import task.Deadline;
-import task.Event;
-import task.TaskList;
-
-import woody.Ui;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import task.Deadline;
+import task.Event;
+import task.TaskList;
+import woody.Ui;
 
 public class CheckCommandTest {
     private final LocalDate DATE_1 = LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));

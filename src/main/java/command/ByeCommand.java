@@ -1,7 +1,6 @@
 package command;
 
 import task.TaskList;
-
 import woody.Ui;
 
 public class ByeCommand extends Command {

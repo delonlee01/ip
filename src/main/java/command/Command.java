@@ -1,9 +1,7 @@
 package command;
 
 import exception.WoodyException;
-
 import task.TaskList;
-
 import woody.Ui;
 
 public abstract class Command {

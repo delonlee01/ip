@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import task.Task;
 import task.TaskList;
-
 import woody.Ui;
 
 public class ListCommand extends Command {
