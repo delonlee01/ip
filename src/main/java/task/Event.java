@@ -3,6 +3,11 @@ package task;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents an <code>Event</code> task in the chatbot system. An
+ * <code>Event</code> object contains a description, done status, 'from' date,
+ * and 'to' date.
+ */
 public class Event extends Task {
     protected LocalDate from;
     protected LocalDate to;
@@ -13,10 +18,20 @@ public class Event extends Task {
         this.to = to;
     }
 
+    /**
+     * Returns the 'from' date of the <code>Event</code> task.
+     * 
+     * @return LocalDate 'from' date
+     */
     public LocalDate getFrom() {
         return this.from;
     }
 
+    /**
+     * Returns the 'to' date of the <code>Event</code> task.
+     * 
+     * @return LocalDate 'to' date
+     */
     public LocalDate getTo() {
         return this.to;
     }
