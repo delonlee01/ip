@@ -5,8 +5,8 @@ package exception;
  */
 public class WoodyException extends Exception {
     /**
-     * Constructs a new <code>WoodyException</code> with the message specified.
-     * 
+     * Constructs a new WoodyException with the message specified.
+     *
      * @param String msg
      */
     public WoodyException(String msg) {

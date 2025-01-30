@@ -9,16 +9,16 @@ public class TaskList {
     private final ArrayList<Task> tasks;
 
     /**
-     * Constructs an empty <code>TaskList</code>.
+     * Constructs an empty TaskList.
      */
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
 
     /**
-     * Constructs a new <code>TaskList</code> with the elements of the specified
-     * <code>ArrayList</code>.
-     * 
+     * Constructs a new TaskList with the elements of the specified
+     * ArrayList.
+     *
      * @param ArrayList<Task> tasks
      */
     public TaskList(ArrayList<Task> tasks) {
@@ -26,9 +26,9 @@ public class TaskList {
     }
 
     /**
-     * Returns an <code>ArrayList</code> which contains the tasks in the
-     * <code>TaskList</code>.
-     * 
+     * Returns an ArrayList which contains the tasks in the
+     * TaskList.
+     *
      * @return ArrayList<Task> tasks
      */
     public ArrayList<Task> getTasks() {
@@ -36,9 +36,9 @@ public class TaskList {
     }
 
     /**
-     * Returns a <code>Task</code> from the <code>TaskList</code> at the specified
+     * Returns a Task from the TaskList at the specified
      * index.
-     * 
+     *
      * @param int index
      * @return Task task
      */
@@ -47,8 +47,8 @@ public class TaskList {
     }
 
     /**
-     * Returns the number of tasks in the <code>TaskList</code>.
-     * 
+     * Returns the number of tasks in the TaskList.
+     *
      * @return int size
      */
     public int getTaskCount() {
@@ -56,8 +56,8 @@ public class TaskList {
     }
 
     /**
-     * Adds a new task to the <code>TaskList</code>.
-     * 
+     * Adds a new task to the TaskList.
+     *
      * @param Task task
      */
     public void addTask(Task task) {
@@ -65,8 +65,8 @@ public class TaskList {
     }
 
     /**
-     * Removes a task from the <code>TaskList</code> at the specified index.
-     * 
+     * Removes a task from the TaskList at the specified index.
+     *
      * @param int index
      * @return Task task removed
      */

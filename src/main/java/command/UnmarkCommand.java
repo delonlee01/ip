@@ -19,7 +19,7 @@ public class UnmarkCommand extends Command {
 
     /**
      * Constructs a command to mark the task at the specified index as not done.
-     * 
+     *
      * @param int index
      */
     public UnmarkCommand(int index) {
@@ -27,9 +27,9 @@ public class UnmarkCommand extends Command {
     }
 
     /**
-     * Returns an <code>UnmarkCommand</code> if the specified input matches the
+     * Returns an UnmarkCommand if the specified input matches the
      * usage format.
-     * 
+     *
      * @param String input
      * @return UnmarkCommand
      */

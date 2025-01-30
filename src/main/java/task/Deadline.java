@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Represents a <code>Deadline</code> task in the chatbot system. A
- * <code>Deadline</code> object contains a description, done status, and 'by'
+ * Represents a Deadline task in the chatbot system. A
+ * Deadline object contains a description, done status, and 'by'
  * date.
  */
 public class Deadline extends Task {
@@ -17,8 +17,8 @@ public class Deadline extends Task {
     }
 
     /**
-     * Returns the 'by' date of the <code>Event</code> task.
-     * 
+     * Returns the 'by' date of the Event task.
+     *
      * @return LocalDate 'by' date
      */
     public LocalDate getBy() {

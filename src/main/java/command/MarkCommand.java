@@ -19,7 +19,7 @@ public class MarkCommand extends Command {
 
     /**
      * Constructs a command to mark the task at the specified index as done.
-     * 
+     *
      * @param int index
      */
     public MarkCommand(int index) {
@@ -27,9 +27,9 @@ public class MarkCommand extends Command {
     }
 
     /**
-     * Returns a <code>MarkCommand</code> if the specified input matches the usage
+     * Returns a MarkCommand if the specified input matches the usage
      * format.
-     * 
+     *
      * @param String input
      * @return MarkCommand
      */

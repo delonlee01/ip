@@ -1,7 +1,7 @@
 package task;
 
 /**
- * Represents a task in the chatbot system. A <code>Task</code> object minimally
+ * Represents a task in the chatbot system. A Task object minimally
  * contains a description and done status.
  */
 public abstract class Task {
@@ -24,7 +24,7 @@ public abstract class Task {
 
     /**
      * Returns a string representation of the task's done status.
-     * 
+     *
      * @return String done status
      */
     public String getStatusIcon() {
@@ -33,7 +33,7 @@ public abstract class Task {
 
     /**
      * Returns a string representation of the task to be used when saving locally.
-     * 
+     *
      * @return String task
      */
     public abstract String toDataString();

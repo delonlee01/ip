@@ -1,8 +1,8 @@
 package task;
 
 /**
- * Represents a <code>Todo</code> task in the chatbot system. A
- * <code>Todo</code> object contains a description and done status.
+ * Represents a Todo task in the chatbot system. A
+ * Todo object contains a description and done status.
  */
 public class Todo extends Task {
     public Todo(String description) {

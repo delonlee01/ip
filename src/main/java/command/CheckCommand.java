@@ -24,7 +24,7 @@ public class CheckCommand extends Command {
 
     /**
      * Constructs a command to check for deadline/event tasks on the specified date.
-     * 
+     *
      * @param LocalDate date
      */
     public CheckCommand(LocalDate date) {
@@ -32,9 +32,9 @@ public class CheckCommand extends Command {
     }
 
     /**
-     * Returns a <code>CheckCommand</code> if the specified input matches the usage
+     * Returns a CheckCommand if the specified input matches the usage
      * format.
-     * 
+     *
      * @param String input
      * @return CheckCommand
      */

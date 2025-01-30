@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Represents an <code>Event</code> task in the chatbot system. An
- * <code>Event</code> object contains a description, done status, 'from' date,
+ * Represents an Event task in the chatbot system. An
+ * Event object contains a description, done status, 'from' date,
  * and 'to' date.
  */
 public class Event extends Task {
@@ -19,8 +19,8 @@ public class Event extends Task {
     }
 
     /**
-     * Returns the 'from' date of the <code>Event</code> task.
-     * 
+     * Returns the 'from' date of the Event task.
+     *
      * @return LocalDate 'from' date
      */
     public LocalDate getFrom() {
@@ -28,8 +28,8 @@ public class Event extends Task {
     }
 
     /**
-     * Returns the 'to' date of the <code>Event</code> task.
-     * 
+     * Returns the 'to' date of the Event task.
+     *
      * @return LocalDate 'to' date
      */
     public LocalDate getTo() {

@@ -17,7 +17,7 @@ public class TodoCommand extends Command {
 
     /**
      * Constructs a command to create a todo task.
-     * 
+     *
      * @param String description
      */
     public TodoCommand(String description) {
@@ -25,9 +25,9 @@ public class TodoCommand extends Command {
     }
 
     /**
-     * Returns a <code>TodoCommand</code> if the specified input matches the
+     * Returns a TodoCommand if the specified input matches the
      * usage format.
-     * 
+     *
      * @param String input
      * @return TodoCommand
      */

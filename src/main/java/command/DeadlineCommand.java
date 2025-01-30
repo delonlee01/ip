@@ -22,7 +22,7 @@ public class DeadlineCommand extends Command {
 
     /**
      * Constructs a command to create a deadline task.
-     * 
+     *
      * @param String    description
      * @param LocalDate by
      */
@@ -32,9 +32,9 @@ public class DeadlineCommand extends Command {
     }
 
     /**
-     * Returns a <code>DeadlineCommand</code> if the specified input matches the
+     * Returns a DeadlineCommand if the specified input matches the
      * usage format.
-     * 
+     *
      * @param String input
      * @return DeadlineCommand
      */

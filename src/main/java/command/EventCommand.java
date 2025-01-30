@@ -23,7 +23,7 @@ public class EventCommand extends Command {
 
     /**
      * Constructs a command to create an event task.
-     * 
+     *
      * @param String    description
      * @param LocalDate from
      * @param LocalDate to
@@ -35,9 +35,9 @@ public class EventCommand extends Command {
     }
 
     /**
-     * Returns a <code>EventCommand</code> if the specified input matches the
+     * Returns a EventCommand if the specified input matches the
      * usage format.
-     * 
+     *
      * @param String input
      * @return EventCommand
      */

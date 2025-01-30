@@ -12,7 +12,7 @@ import woody.Ui;
 public abstract class Command {
     /**
      * Executes the logic of the command.
-     * 
+     *
      * @param TaskList tasks
      * @param Ui       ui
      * @throws WoodyException
@@ -21,7 +21,7 @@ public abstract class Command {
 
     /**
      * Returns if the commmand is read-only, or read-write.
-     * 
+     *
      * @return boolean read-only status
      */
     public boolean isReadOnly() {
@@ -30,7 +30,7 @@ public abstract class Command {
 
     /**
      * Returns if application should exit after the commmand is executed.
-     * 
+     *
      * @return boolean exit status
      */
     public boolean isExit() {

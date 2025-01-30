@@ -14,9 +14,9 @@ public class ListCommand extends Command {
     protected static String REGEX_PATTERN = "^list$";
 
     /**
-     * Returns a <code>ListCommand</code> if the specified input matches the usage
+     * Returns a ListCommand if the specified input matches the usage
      * format.
-     * 
+     *
      * @param String input
      * @return ListCommand
      */

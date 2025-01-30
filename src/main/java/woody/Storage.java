@@ -27,7 +27,7 @@ public class Storage {
 
     /**
      * Constructs a storage with the specified parser.
-     * 
+     *
      * @param Parser parser
      * @throws WoodyException
      */
@@ -45,8 +45,8 @@ public class Storage {
     }
 
     /**
-     * Returns a <code>TaskList</code> object containing the tasks stored locally.
-     * 
+     * Returns a TaskList object containing the tasks stored locally.
+     *
      * @return TaskList
      * @throws WoodyException
      */
@@ -81,8 +81,8 @@ public class Storage {
     }
 
     /**
-     * Stores all tasks in the specified <code>TaskList</code> object locally.
-     * 
+     * Stores all tasks in the specified TaskList object locally.
+     *
      * @param TaskList taskList
      * @throws WoodyException
      */

@@ -19,7 +19,7 @@ public class DeleteCommand extends Command {
 
     /**
      * Constructs a command to delete the task at the specified index.
-     * 
+     *
      * @param int index
      */
     public DeleteCommand(int index) {
@@ -27,9 +27,9 @@ public class DeleteCommand extends Command {
     }
 
     /**
-     * Returns a <code>DeleteCommand</code> if the specified input matches the
+     * Returns a DeleteCommand if the specified input matches the
      * usage format.
-     * 
+     *
      * @param String input
      * @return DeleteCommand
      */

@@ -25,7 +25,7 @@ public class Ui {
     private boolean isSuppressed;
 
     /**
-     * Constructs a new <code>Ui</code>.
+     * Constructs a new Ui.
      */
     public Ui() {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
@@ -36,7 +36,7 @@ public class Ui {
     /**
      * Sets the suppression status of the user interface. If true, outputs are not
      * printed.
-     * 
+     *
      * @return Ui
      */
     public Ui toSuppressOutput() {
@@ -59,7 +59,7 @@ public class Ui {
 
     /**
      * Reads user input from standard input.
-     * 
+     *
      * @return String
      * @throws WoodyException
      */

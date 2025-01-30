@@ -11,9 +11,9 @@ public class ByeCommand extends Command {
     private static String REGEX_PATTERN = "^bye$";
 
     /**
-     * Returns a <code>ByeCommand</code> if the specified input matches the usage
+     * Returns a ByeCommand if the specified input matches the usage
      * format.
-     * 
+     *
      * @param String input
      * @return ByeCommand
      */
