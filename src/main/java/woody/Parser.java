@@ -1,7 +1,6 @@
 package woody;
 
 import java.util.List;
-
 import exception.WoodyException;
 
 import command.ByeCommand;
@@ -10,6 +9,7 @@ import command.Command;
 import command.DeadlineCommand;
 import command.DeleteCommand;
 import command.EventCommand;
+import command.FindCommand;
 import command.ListCommand;
 import command.MarkCommand;
 import command.TodoCommand;
@@ -18,7 +18,7 @@ import command.UnmarkCommand;
 public class Parser {
     private final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class, CheckCommand.class,
             TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class, UnmarkCommand.class,
-            DeleteCommand.class, ByeCommand.class);
+            DeleteCommand.class, ByeCommand.class, FindCommand.class);
 
     private Command parse(String text, List<Class<? extends Command>> commands) throws WoodyException {
         Class<?>[] params = new Class[]{String.class};
