@@ -1,5 +1,9 @@
 package task;
 
+/**
+ * Represents a Todo task in the chatbot system. A
+ * Todo object contains a description and done status.
+ */
 public class Todo extends Task {
     public Todo(String description) {
         this.description = description;

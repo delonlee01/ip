@@ -3,6 +3,11 @@ package task;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a Deadline task in the chatbot system. A
+ * Deadline object contains a description, done status, and 'by'
+ * date.
+ */
 public class Deadline extends Task {
     protected LocalDate by;
 
@@ -11,6 +16,11 @@ public class Deadline extends Task {
         this.by = by;
     }
 
+    /**
+     * Returns the 'by' date of the Event task.
+     *
+     * @return LocalDate 'by' date
+     */
     public LocalDate getBy() {
         return this.by;
     }

@@ -10,14 +10,29 @@ import task.TaskList;
 
 import woody.Ui;
 
+/**
+ * Represents a delete command in the chatbot system.
+ */
 public class DeleteCommand extends Command {
     private static Pattern REGEX_PATTERN = Pattern.compile("^delete (?<index>\\d+)$");
     private int index;
 
+    /**
+     * Constructs a command to delete the task at the specified index.
+     *
+     * @param int index
+     */
     public DeleteCommand(int index) {
         this.index = index;
     }
 
+    /**
+     * Returns a DeleteCommand if the specified input matches the
+     * usage format.
+     *
+     * @param String input
+     * @return DeleteCommand
+     */
     public static DeleteCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {

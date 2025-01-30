@@ -8,14 +8,29 @@ import task.Todo;
 
 import woody.Ui;
 
+/**
+ * Represents a todo command in the chatbot system.
+ */
 public class TodoCommand extends Command {
     private static final Pattern REGEX_PATTERN = Pattern.compile("^todo (?<description>.+)$");
     private String description;
 
+    /**
+     * Constructs a command to create a todo task.
+     *
+     * @param String description
+     */
     public TodoCommand(String description) {
         this.description = description;
     }
 
+    /**
+     * Returns a TodoCommand if the specified input matches the
+     * usage format.
+     *
+     * @param String input
+     * @return TodoCommand
+     */
     public static TodoCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {

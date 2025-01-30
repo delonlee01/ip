@@ -10,14 +10,29 @@ import task.TaskList;
 
 import woody.Ui;
 
+/**
+ * Represents a mark command in the chatbot system.
+ */
 public class MarkCommand extends Command {
     private static Pattern REGEX_PATTERN = Pattern.compile("^mark (?<index>\\d+)$");
     private int index;
 
+    /**
+     * Constructs a command to mark the task at the specified index as done.
+     *
+     * @param int index
+     */
     public MarkCommand(int index) {
         this.index = index;
     }
 
+    /**
+     * Returns a MarkCommand if the specified input matches the usage
+     * format.
+     *
+     * @param String input
+     * @return MarkCommand
+     */
     public static MarkCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {
