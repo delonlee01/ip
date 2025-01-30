@@ -11,6 +11,9 @@ import task.TaskList;
 
 import woody.Ui;
 
+/**
+ * Represents an event command in the chatbot system.
+ */
 public class EventCommand extends Command {
     private static Pattern REGEX_PATTERN = Pattern.compile(
             "^event (?<description>.+) \\/from (?<from>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4}) \\/to (?<to>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$");
@@ -18,12 +21,26 @@ public class EventCommand extends Command {
     private LocalDate from;
     private LocalDate to;
 
+    /**
+     * Constructs a command to create an event task.
+     * 
+     * @param String    description
+     * @param LocalDate from
+     * @param LocalDate to
+     */
     public EventCommand(String description, LocalDate from, LocalDate to) {
         this.description = description;
         this.from = from;
         this.to = to;
     }
 
+    /**
+     * Returns a <code>EventCommand</code> if the specified input matches the
+     * usage format.
+     * 
+     * @param String input
+     * @return EventCommand
+     */
     public static EventCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
         if (matcher.matches()) {

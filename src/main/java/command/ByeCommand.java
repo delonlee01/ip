@@ -4,9 +4,19 @@ import task.TaskList;
 
 import woody.Ui;
 
+/**
+ * Represents a bye command in the chatbot system.
+ */
 public class ByeCommand extends Command {
     private static String REGEX_PATTERN = "^bye$";
 
+    /**
+     * Returns a <code>ByeCommand</code> if the specified input matches the usage
+     * format.
+     * 
+     * @param String input
+     * @return ByeCommand
+     */
     public static ByeCommand createCommandIfValid(String input) {
         if (input.matches(ByeCommand.REGEX_PATTERN)) {
             return new ByeCommand();
