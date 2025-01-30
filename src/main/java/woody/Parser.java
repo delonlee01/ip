@@ -26,8 +26,8 @@ public class Parser {
      * Returns a command if the text matches the usage format of a command in the
      * given list.
      *
-     * @param String text
-     * @param List<? extends Commands> commands
+     * @param text     string representation of command
+     * @param commands List&lt;? extends Commands&gt;
      * @return Command
      * @throws WoodyException
      */
@@ -50,7 +50,7 @@ public class Parser {
     /**
      * Returns a command if the user input matches the usage format of a command.
      *
-     * @param String text
+     * @param text string representation of command
      * @return Command
      * @throws WoodyException
      */
@@ -61,7 +61,7 @@ public class Parser {
     /**
      * Returns a command if the data record matches the usage format of a command.
      *
-     * @param String text
+     * @param text string representation of command
      * @return Command
      * @throws WoodyException
      */

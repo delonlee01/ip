@@ -11,8 +11,8 @@ public abstract class Command {
     /**
      * Executes the logic of the command.
      *
-     * @param TaskList tasks
-     * @param Ui       ui
+     * @param tasks TaskList
+     * @param ui    Ui
      * @throws WoodyException
      */
     public abstract void execute(TaskList tasks, Ui ui) throws WoodyException;

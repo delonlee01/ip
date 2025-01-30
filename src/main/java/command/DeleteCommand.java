@@ -18,7 +18,7 @@ public class DeleteCommand extends Command {
     /**
      * Constructs a command to delete the task at the specified index.
      *
-     * @param int index
+     * @param index index of task
      */
     public DeleteCommand(int index) {
         this.index = index;
@@ -28,7 +28,7 @@ public class DeleteCommand extends Command {
      * Returns a DeleteCommand if the specified input matches the
      * usage format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return DeleteCommand
      */
     public static DeleteCommand createCommandIfValid(String input) {

@@ -23,9 +23,9 @@ public class EventCommand extends Command {
     /**
      * Constructs a command to create an event task.
      *
-     * @param String    description
-     * @param LocalDate from
-     * @param LocalDate to
+     * @param description description of task
+     * @param from        start date
+     * @param to          end date
      */
     public EventCommand(String description, LocalDate from, LocalDate to) {
         this.description = description;
@@ -37,7 +37,7 @@ public class EventCommand extends Command {
      * Returns a EventCommand if the specified input matches the
      * usage format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return EventCommand
      */
     public static EventCommand createCommandIfValid(String input) {

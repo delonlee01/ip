@@ -21,8 +21,8 @@ public class DeadlineCommand extends Command {
     /**
      * Constructs a command to create a deadline task.
      *
-     * @param String    description
-     * @param LocalDate by
+     * @param description description of task
+     * @param by          due date
      */
     public DeadlineCommand(String description, LocalDate by) {
         this.description = description;
@@ -33,7 +33,7 @@ public class DeadlineCommand extends Command {
      * Returns a DeadlineCommand if the specified input matches the
      * usage format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return DeadlineCommand
      */
     public static DeadlineCommand createCommandIfValid(String input) {

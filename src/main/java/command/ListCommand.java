@@ -16,7 +16,7 @@ public class ListCommand extends Command {
      * Returns a ListCommand if the specified input matches the usage
      * format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return ListCommand
      */
     public static ListCommand createCommandIfValid(String input) {

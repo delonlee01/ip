@@ -18,7 +18,7 @@ public class UnmarkCommand extends Command {
     /**
      * Constructs a command to mark the task at the specified index as not done.
      *
-     * @param int index
+     * @param index index of task
      */
     public UnmarkCommand(int index) {
         this.index = index;
@@ -28,7 +28,7 @@ public class UnmarkCommand extends Command {
      * Returns an UnmarkCommand if the specified input matches the
      * usage format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return UnmarkCommand
      */
     public static UnmarkCommand createCommandIfValid(String input) {

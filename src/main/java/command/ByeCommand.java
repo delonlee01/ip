@@ -13,7 +13,7 @@ public class ByeCommand extends Command {
      * Returns a ByeCommand if the specified input matches the usage
      * format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return ByeCommand
      */
     public static ByeCommand createCommandIfValid(String input) {

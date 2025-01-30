@@ -25,7 +25,7 @@ public class Storage {
     /**
      * Constructs a storage with the specified parser.
      *
-     * @param Parser parser
+     * @param parser Parser
      * @throws WoodyException
      */
     public Storage(Parser parser) throws WoodyException {
@@ -80,7 +80,7 @@ public class Storage {
     /**
      * Stores all tasks in the specified TaskList object locally.
      *
-     * @param TaskList taskList
+     * @param taskList TaskList
      * @throws WoodyException
      */
     public void save(TaskList taskList) throws WoodyException {
