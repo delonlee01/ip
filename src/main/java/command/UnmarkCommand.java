@@ -4,23 +4,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import exception.TaskNotFoundException;
-
 import task.Task;
 import task.TaskList;
-
 import woody.Ui;
 
 /**
  * Represents an unmark command in the chatbot system.
  */
 public class UnmarkCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern.compile("^unmark (?<index>\\d+)$");
-    private int index;
+    private static final Pattern REGEX_PATTERN = Pattern.compile("^unmark (?<index>\\d+)$");
+    private final int index;
 
     /**
      * Constructs a command to mark the task at the specified index as not done.
      *
-     * @param int index
+     * @param index index of task
      */
     public UnmarkCommand(int index) {
         this.index = index;
@@ -30,7 +28,7 @@ public class UnmarkCommand extends Command {
      * Returns an UnmarkCommand if the specified input matches the
      * usage format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return UnmarkCommand
      */
     public static UnmarkCommand createCommandIfValid(String input) {

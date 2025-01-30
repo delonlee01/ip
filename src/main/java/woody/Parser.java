@@ -2,8 +2,6 @@ package woody;
 
 import java.util.List;
 
-import exception.WoodyException;
-
 import command.ByeCommand;
 import command.CheckCommand;
 import command.Command;
@@ -14,21 +12,22 @@ import command.ListCommand;
 import command.MarkCommand;
 import command.TodoCommand;
 import command.UnmarkCommand;
+import exception.WoodyException;
 
 /**
  * Represents a parser to interpret user input in the chatbot system.
  */
 public class Parser {
-    private final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class, CheckCommand.class,
-            TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class, UnmarkCommand.class,
-            DeleteCommand.class, ByeCommand.class);
+    private static final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class,
+            CheckCommand.class, TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class,
+            UnmarkCommand.class, DeleteCommand.class, ByeCommand.class);
 
     /**
      * Returns a command if the text matches the usage format of a command in the
      * given list.
      *
-     * @param String text
-     * @param List<? extends Commands> commands
+     * @param text     string representation of command
+     * @param commands List&lt;? extends Commands&gt;
      * @return Command
      * @throws WoodyException
      */
@@ -51,7 +50,7 @@ public class Parser {
     /**
      * Returns a command if the user input matches the usage format of a command.
      *
-     * @param String text
+     * @param text string representation of command
      * @return Command
      * @throws WoodyException
      */
@@ -62,7 +61,7 @@ public class Parser {
     /**
      * Returns a command if the data record matches the usage format of a command.
      *
-     * @param String text
+     * @param text string representation of command
      * @return Command
      * @throws WoodyException
      */

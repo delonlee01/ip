@@ -1,14 +1,15 @@
 package task;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class DeadlineTest {
-    private final LocalDate BY_DATE = LocalDate.parse("01/01/2025", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    private static final LocalDate BY_DATE = LocalDate.parse("01/01/2025",
+            DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
     @Test
     public void getBy_success() {

@@ -12,6 +12,13 @@ public class Event extends Task {
     protected LocalDate from;
     protected LocalDate to;
 
+    /**
+     * Constructs a Deadline task with the specified description, 'from' date, and 'to' date.
+     *
+     * @param description description of task
+     * @param from        start date;
+     * @param to          end date;
+     */
     public Event(String description, LocalDate from, LocalDate to) {
         this.description = description;
         this.from = from;

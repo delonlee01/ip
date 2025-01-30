@@ -5,6 +5,11 @@ package task;
  * Todo object contains a description and done status.
  */
 public class Todo extends Task {
+    /**
+     * Constructs a Todo task with the specified description.
+     *
+     * @param description description of task
+     */
     public Todo(String description) {
         this.description = description;
     }

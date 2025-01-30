@@ -1,10 +1,8 @@
 package woody;
 
-import exception.WoodyException;
-
-import task.TaskList;
-
 import command.Command;
+import exception.WoodyException;
+import task.TaskList;
 
 /**
  * Represents the chatbot system.

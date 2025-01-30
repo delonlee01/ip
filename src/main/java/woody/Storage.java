@@ -7,16 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import java.nio.file.Paths;
-
-import exception.WoodyException;
-
-import task.Task;
-import task.TaskList;
 
 import command.Command;
 import command.MarkCommand;
+import exception.WoodyException;
+import task.Task;
+import task.TaskList;
 
 /**
  * Represents a storage to read-write data locally in the chatbot system.
@@ -28,7 +25,7 @@ public class Storage {
     /**
      * Constructs a storage with the specified parser.
      *
-     * @param Parser parser
+     * @param parser Parser
      * @throws WoodyException
      */
     public Storage(Parser parser) throws WoodyException {
@@ -83,7 +80,7 @@ public class Storage {
     /**
      * Stores all tasks in the specified TaskList object locally.
      *
-     * @param TaskList taskList
+     * @param taskList TaskList
      * @throws WoodyException
      */
     public void save(TaskList taskList) throws WoodyException {

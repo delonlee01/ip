@@ -2,7 +2,6 @@ package command;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,20 +11,19 @@ import task.Event;
 import task.Task;
 import task.TaskList;
 import task.Todo;
-
 import woody.Ui;
 
 /**
  * Represents a check command in the chatbot system.
  */
 public class CheckCommand extends Command {
-    private static Pattern REGEX_PATTERN = Pattern.compile("^check (?<date>[0-9]{2}\\/[0-9]{2}\\/[0-9]{4})$");
-    private LocalDate date;
+    private static final Pattern REGEX_PATTERN = Pattern.compile("^check (?<date>[0-9]{2}/[0-9]{2}/[0-9]{4})$");
+    private final LocalDate date;
 
     /**
      * Constructs a command to check for deadline/event tasks on the specified date.
      *
-     * @param LocalDate date
+     * @param date date of interest
      */
     public CheckCommand(LocalDate date) {
         this.date = date;
@@ -35,7 +33,7 @@ public class CheckCommand extends Command {
      * Returns a CheckCommand if the specified input matches the usage
      * format.
      *
-     * @param String input
+     * @param input string representation of command
      * @return CheckCommand
      */
     public static CheckCommand createCommandIfValid(String input) {
