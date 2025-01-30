@@ -23,6 +23,15 @@ public abstract class Task {
     }
 
     /**
+     * Returns the description of the task.
+     *
+     * @return String description
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
      * Returns a string representation of the task's done status.
      *
      * @return String done status

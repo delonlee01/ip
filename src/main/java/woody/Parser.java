@@ -8,6 +8,7 @@ import command.Command;
 import command.DeadlineCommand;
 import command.DeleteCommand;
 import command.EventCommand;
+import command.FindCommand;
 import command.ListCommand;
 import command.MarkCommand;
 import command.TodoCommand;
@@ -20,7 +21,7 @@ import exception.WoodyException;
 public class Parser {
     private static final List<Class<? extends Command>> ALLOWED_COMMANDS = List.of(ListCommand.class,
             CheckCommand.class, TodoCommand.class, DeadlineCommand.class, EventCommand.class, MarkCommand.class,
-            UnmarkCommand.class, DeleteCommand.class, ByeCommand.class);
+            UnmarkCommand.class, DeleteCommand.class, ByeCommand.class, FindCommand.class);
 
     /**
      * Returns a command if the text matches the usage format of a command in the
