@@ -29,7 +29,7 @@ public class TaskList {
      * Returns an ArrayList which contains the tasks in the
      * TaskList.
      *
-     * @return ArrayList&lt;Task&gt; tasks
+     * @return ArrayList&lt;Task&gt;
      */
     public ArrayList<Task> getTasks() {
         return this.tasks;
@@ -40,7 +40,7 @@ public class TaskList {
      * index.
      *
      * @param index index of task
-     * @return Task task
+     * @return task
      */
     public Task getTask(int index) {
         return this.tasks.get(index);
@@ -49,7 +49,7 @@ public class TaskList {
     /**
      * Returns the number of tasks in the TaskList.
      *
-     * @return int size
+     * @return number of tasks
      */
     public int getTaskCount() {
         return this.tasks.size();

@@ -20,7 +20,7 @@ public abstract class Command {
     /**
      * Returns if the commmand is read-only, or read-write.
      *
-     * @return boolean read-only status
+     * @return read-only status
      */
     public boolean isReadOnly() {
         return false;
@@ -29,7 +29,7 @@ public abstract class Command {
     /**
      * Returns if application should exit after the commmand is executed.
      *
-     * @return boolean exit status
+     * @return exit status
      */
     public boolean isExit() {
         return false;

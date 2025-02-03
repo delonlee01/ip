@@ -7,7 +7,7 @@ public class WoodyException extends Exception {
     /**
      * Constructs a new WoodyException with the message specified.
      *
-     * @param String msg
+     * @param msg message of the exception
      */
     public WoodyException(String msg) {
         super("Something went wrong partner. " + msg);
