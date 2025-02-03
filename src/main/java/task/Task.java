@@ -25,7 +25,7 @@ public abstract class Task {
     /**
      * Returns the description of the task.
      *
-     * @return String description
+     * @return description
      */
     public String getDescription() {
         return this.description;
@@ -34,7 +34,7 @@ public abstract class Task {
     /**
      * Returns a string representation of the task's done status.
      *
-     * @return String done status
+     * @return done status
      */
     public String getStatusIcon() {
         return this.isDone ? "X" : " ";
@@ -43,7 +43,7 @@ public abstract class Task {
     /**
      * Returns a string representation of the task to be used when saving locally.
      *
-     * @return String task
+     * @return string representation of the task
      */
     public abstract String toDataString();
 
