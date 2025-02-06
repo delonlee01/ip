@@ -13,16 +13,15 @@ import woody.Woody;
  * A GUI for Woody using FXML.
  */
 public class Main extends Application {
-    private Woody woody = new Woody();
-
     @Override
     public void start(Stage stage) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
-            AnchorPane ap = fxmlLoader.load();
-            Scene scene = new Scene(ap);
+            AnchorPane container = fxmlLoader.load();
+            Scene scene = new Scene(container);
+            stage.setTitle("Woody");
             stage.setScene(scene);
-            fxmlLoader.<MainWindow>getController().setWoody(woody);
+            fxmlLoader.<MainWindow>getController().setWoody(new Woody());
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -4,9 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
- * Represents a Deadline task in the chatbot system. A
- * Deadline object contains a description, done status, and 'by'
- * date.
+ * Represents a Deadline task in the chatbot system. A Deadline object
+ * contains a description, done status, and 'by' date.
  */
 public class Deadline extends Task {
     protected LocalDate by;

@@ -20,7 +20,7 @@ import task.TaskList;
  */
 public class Storage {
     private static final String DATA_PATH = Paths.get(".", "data", "woody.txt").toString();
-    private Parser parser;
+    private final Parser parser;
 
     /**
      * Constructs a storage with the specified parser.
@@ -52,7 +52,6 @@ public class Storage {
         File data = new File(DATA_PATH);
         try {
             BufferedReader reader = new BufferedReader(new FileReader(data));
-            Ui suppressedUi = new Ui().toSuppressOutput(); // does not suppress errors
             while (true) {
                 String line = reader.readLine();
                 if (line == null) {
@@ -63,9 +62,9 @@ public class Storage {
                 if (command == null) { // malformed data in local file
                     continue;
                 }
-                command.execute(tasks, suppressedUi);
+                command.execute(tasks);
                 if (tokens[0].equals("1")) {
-                    new MarkCommand(tasks.getTaskCount() - 1).execute(tasks, suppressedUi);
+                    new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
                 }
             }
             reader.close();

@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 import exception.TaskNotFoundException;
 import task.Task;
 import task.TaskList;
-import woody.Ui;
 
 /**
  * Represents an unmark command in the chatbot system.
@@ -25,8 +24,7 @@ public class UnmarkCommand extends Command {
     }
 
     /**
-     * Returns an UnmarkCommand if the specified input matches the
-     * usage format.
+     * Returns an UnmarkCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return UnmarkCommand
@@ -41,12 +39,11 @@ public class UnmarkCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) throws TaskNotFoundException {
+    public String execute(TaskList taskList) throws TaskNotFoundException {
         try {
             Task task = taskList.getTask(this.index);
             task.markAsNotDone();
-            ui.writeOutput("Alright! I've marked this task as not done yet:");
-            ui.writeOutput(task.toString());
+            return "Alright! I've marked this task as not done yet:\n" + task + "\n";
         } catch (IndexOutOfBoundsException e) {
             throw new TaskNotFoundException();
         }

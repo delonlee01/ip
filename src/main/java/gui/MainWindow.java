@@ -1,5 +1,9 @@
 package gui;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -24,31 +28,42 @@ public class MainWindow extends AnchorPane {
 
     private Woody woody;
 
-    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/User.png"));
-    private Image woodyImage = new Image(this.getClass().getResourceAsStream("/images/Woody.png"));
+    private final Image userImage = new Image(this.getClass().getResourceAsStream("/images/User.png"));
+    private final Image woodyImage = new Image(this.getClass().getResourceAsStream("/images/Woody.png"));
 
     @FXML
     public void initialize() {
-        scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
-    }
-
-    /** Injects the Woody instance */
-    public void setWoody(Woody w) {
-        woody = w;
+        this.scrollPane.vvalueProperty().bind(this.dialogContainer.heightProperty());
+        this.dialogContainer.getChildren().add(DialogBox.getWoodyDialog(
+                "Howdy partner! I'm Woody\nWhat can I do for you?", woodyImage));
     }
 
     /**
-     * Creates two dialog boxes, one echoing user input and the other containing Woody's reply and then appends them to
-     * the dialog container. Clears the user input after processing.
+     * Injects the Woody instance
      */
+    public void setWoody(Woody woody) {
+        this.woody = woody;
+    }
+
+    private void handleWoodyResponse(String input) {
+        String response = this.woody.getResponse(input);
+        this.dialogContainer.getChildren().add(DialogBox.getWoodyDialog(response, woodyImage));
+        if (response.startsWith("Bye")) {
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Platform.exit();
+                    System.exit(0);
+                }
+            }, 500);
+        }
+    }
+
     @FXML
     private void handleUserInput() {
-        String input = userInput.getText();
-        String response = woody.getResponse(input);
-        dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(input, userImage),
-                DialogBox.getWoodyDialog(response, woodyImage)
-        );
+        String input = this.userInput.getText();
+        this.dialogContainer.getChildren().add(DialogBox.getUserDialog(input, userImage));
+        this.handleWoodyResponse(input);
         userInput.clear();
     }
 }
