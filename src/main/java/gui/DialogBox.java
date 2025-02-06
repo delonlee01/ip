@@ -20,6 +20,8 @@ import javafx.scene.layout.HBox;
  */
 public class DialogBox extends HBox {
     @FXML
+    private HBox container;
+    @FXML
     private Label dialog;
     @FXML
     private ImageView displayPicture;
@@ -27,6 +29,7 @@ public class DialogBox extends HBox {
     private DialogBox(String text, Image image) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("/view/DialogBox.fxml"));
+            this.getStylesheets().add(MainWindow.class.getResource("/css/dialog-box.css").toExternalForm());
             fxmlLoader.setController(this);
             fxmlLoader.setRoot(this);
             fxmlLoader.load();
@@ -42,9 +45,9 @@ public class DialogBox extends HBox {
      * right.
      */
     private void flip() {
-        ObservableList<Node> children = FXCollections.observableArrayList(this.getChildren());
+        ObservableList<Node> children = FXCollections.observableArrayList(this.container.getChildren());
         Collections.reverse(children);
-        this.getChildren().setAll(children);
+        this.container.getChildren().setAll(children);
         this.setAlignment(Pos.TOP_LEFT);
     }
 

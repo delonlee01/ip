@@ -1,0 +1,10 @@
+#container {
+    -fx-alignment: center;
+}
+
+.label {
+    -fx-padding: 8px;
+    -fx-border-color: grey;
+    -fx-border-radius: 4px;
+    -fx-background-color: white;
+}

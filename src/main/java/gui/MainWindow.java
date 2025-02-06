@@ -31,6 +31,9 @@ public class MainWindow extends AnchorPane {
     private final Image userImage = new Image(this.getClass().getResourceAsStream("/images/User.png"));
     private final Image woodyImage = new Image(this.getClass().getResourceAsStream("/images/Woody.png"));
 
+    /**
+     * Initializes the application.
+     */
     @FXML
     public void initialize() {
         this.scrollPane.vvalueProperty().bind(this.dialogContainer.heightProperty());

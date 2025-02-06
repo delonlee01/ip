@@ -19,8 +19,11 @@ public class Main extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/MainWindow.fxml"));
             AnchorPane container = fxmlLoader.load();
             Scene scene = new Scene(container);
+            scene.getStylesheets().add(Main.class.getResource("/css/main.css").toExternalForm());
             stage.setTitle("Woody");
             stage.setScene(scene);
+            stage.setMinHeight(220);
+            stage.setMinWidth(417);
             fxmlLoader.<MainWindow>getController().setWoody(new Woody());
             stage.show();
         } catch (IOException e) {
