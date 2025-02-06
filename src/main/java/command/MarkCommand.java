@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 import exception.TaskNotFoundException;
 import task.Task;
 import task.TaskList;
-import woody.Ui;
 
 /**
  * Represents a mark command in the chatbot system.
@@ -25,8 +24,7 @@ public class MarkCommand extends Command {
     }
 
     /**
-     * Returns a MarkCommand if the specified input matches the usage
-     * format.
+     * Returns a MarkCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return MarkCommand
@@ -41,12 +39,11 @@ public class MarkCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) throws TaskNotFoundException {
+    public String execute(TaskList taskList) throws TaskNotFoundException {
         try {
             Task task = taskList.getTask(this.index);
             task.markAsDone();
-            ui.writeOutput("Yee-haw! I've marked this task as done:");
-            ui.writeOutput(task.toString());
+            return "Yee-haw! I've marked this task as done:\n" + task + "\n";
         } catch (IndexOutOfBoundsException e) {
             throw new TaskNotFoundException();
         }

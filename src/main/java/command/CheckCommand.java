@@ -11,7 +11,6 @@ import task.Event;
 import task.Task;
 import task.TaskList;
 import task.Todo;
-import woody.Ui;
 
 /**
  * Represents a check command in the chatbot system.
@@ -30,8 +29,7 @@ public class CheckCommand extends Command {
     }
 
     /**
-     * Returns a CheckCommand if the specified input matches the usage
-     * format.
+     * Returns a CheckCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return CheckCommand
@@ -46,10 +44,10 @@ public class CheckCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) {
+    public String execute(TaskList taskList) {
         ArrayList<Task> tasks = taskList.getTasks();
-        ui.writeOutput(
-                String.format("Here are the tasks for %s:", date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))));
+        StringBuilder output = new StringBuilder(String.format("Here are the tasks for %s:\n",
+                date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))));
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             if (task instanceof Deadline) {
@@ -67,8 +65,9 @@ public class CheckCommand extends Command {
             if (task instanceof Todo) {
                 continue;
             }
-            ui.writeOutput(String.format("%d.%s", i + 1, task));
+            output.append(String.format("%d.%s\n", i + 1, task));
         }
+        return output.toString();
     }
 
     @Override

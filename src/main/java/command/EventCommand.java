@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 import task.Event;
 import task.TaskList;
-import woody.Ui;
 
 /**
  * Represents an event command in the chatbot system.
@@ -34,8 +33,7 @@ public class EventCommand extends Command {
     }
 
     /**
-     * Returns a EventCommand if the specified input matches the
-     * usage format.
+     * Returns a EventCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return EventCommand
@@ -51,11 +49,12 @@ public class EventCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) {
+    public String execute(TaskList taskList) {
         Event task = new Event(this.description, this.from, this.to);
         taskList.addTask(task);
-        ui.writeOutput("Got it. I've added this task:");
-        ui.writeOutput(task.toString());
-        ui.writeOutput(String.format("Now you have %d tasks in the list.", taskList.getTaskCount()));
+        String output = "Got it. I've added this task:\n";
+        output += task + "\n";
+        output += String.format("Now you have %d tasks in the list.\n", taskList.getTaskCount());
+        return output;
     }
 }

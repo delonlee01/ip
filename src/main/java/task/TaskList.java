@@ -16,8 +16,7 @@ public class TaskList {
     }
 
     /**
-     * Constructs a new TaskList with the elements of the specified
-     * ArrayList.
+     * Constructs a new TaskList with the elements of the specified ArrayList.
      *
      * @param tasks ArrayList&lt;Task&gt;
      */

@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 import task.TaskList;
 import task.Todo;
-import woody.Ui;
 
 /**
  * Represents a todo command in the chatbot system.
@@ -24,8 +23,7 @@ public class TodoCommand extends Command {
     }
 
     /**
-     * Returns a TodoCommand if the specified input matches the
-     * usage format.
+     * Returns a TodoCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return TodoCommand
@@ -39,11 +37,12 @@ public class TodoCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) {
+    public String execute(TaskList taskList) {
         Todo task = new Todo(this.description);
         taskList.addTask(task);
-        ui.writeOutput("Got it. I've added this task:");
-        ui.writeOutput(task.toString());
-        ui.writeOutput(String.format("Now you have %d tasks in the list.", taskList.getTaskCount()));
+        String output = "Got it. I've added this task:\n";
+        output += task + "\n";
+        output += String.format("Now you have %d tasks in the list.\n", taskList.getTaskCount());
+        return output;
     }
 }

@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 import exception.TaskNotFoundException;
 import task.Task;
 import task.TaskList;
-import woody.Ui;
 
 /**
  * Represents a delete command in the chatbot system.
@@ -41,12 +40,13 @@ public class DeleteCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) throws TaskNotFoundException {
+    public String execute(TaskList taskList) throws TaskNotFoundException {
         try {
             Task task = taskList.deleteTask(this.index);
-            ui.writeOutput("Got it. I've removed this task:");
-            ui.writeOutput(task.toString());
-            ui.writeOutput(String.format("Now you have %d tasks in the list.", taskList.getTaskCount()));
+            String output = "Got it. I've removed this task:\n";
+            output += task.toString() + "\n";
+            output += String.format("Now you have %d tasks in the list.\n", taskList.getTaskCount());
+            return output;
         } catch (IndexOutOfBoundsException e) {
             throw new TaskNotFoundException();
         }

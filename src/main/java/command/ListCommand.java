@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import task.Task;
 import task.TaskList;
-import woody.Ui;
 
 /**
  * Represents a list command in the chatbot system.
@@ -13,8 +12,7 @@ public class ListCommand extends Command {
     private static final String REGEX_PATTERN = "^list$";
 
     /**
-     * Returns a ListCommand if the specified input matches the usage
-     * format.
+     * Returns a ListCommand if the specified input matches the usage format.
      *
      * @param input string representation of command
      * @return ListCommand
@@ -27,13 +25,14 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList taskList, Ui ui) {
+    public String execute(TaskList taskList) {
         ArrayList<Task> tasks = taskList.getTasks();
-        ui.writeOutput("Here are the tasks in your list:");
+        StringBuilder output = new StringBuilder("Here are the tasks in your list:\n");
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
-            ui.writeOutput(String.format("%d.%s", i + 1, task));
+            output.append(String.format("%d.%s\n", i + 1, task));
         }
+        return output.toString();
     }
 
     @Override

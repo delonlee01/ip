@@ -8,42 +8,42 @@ import task.TaskList;
  * Represents the chatbot system.
  */
 public class Woody {
-    private static Ui ui;
-    private static Parser parser;
-    private static Storage storage;
-    private static TaskList taskList;
+    private final Parser parser;
+    private Storage storage;
+    private TaskList taskList;
 
-    public static void main(String[] args) {
-        ui = new Ui();
-        parser = new Parser();
-
+    /**
+     * Constructs a Woody object.
+     */
+    public Woody() {
+        this.parser = new Parser();
         try {
-            storage = new Storage(parser);
-            taskList = storage.load();
+            this.storage = new Storage(parser);
+            this.taskList = storage.load();
         } catch (WoodyException e) {
-            taskList = new TaskList();
-            ui.writeOutput(e.toString());
+            this.taskList = new TaskList();
         }
+    }
 
-        ui.printWelcome();
-
-        while (true) {
-            try {
-                String input = ui.readInput();
-                Command command = parser.parseInput(input);
-                if (command == null) {
-                    throw new WoodyException("The command entered is invalid or formatted incorrectly.");
-                }
-                command.execute(taskList, ui);
-                if (!command.isReadOnly()) {
-                    storage.save(taskList);
-                }
-                if (command.isExit()) {
-                    break;
-                }
-            } catch (WoodyException e) {
-                ui.writeOutput(e.toString());
+    /**
+     * Returns Woody's response based on the given user input.
+     *
+     * @param userInput
+     * @return Woody's response
+     */
+    public String getResponse(String userInput) {
+        try {
+            Command command = this.parser.parseInput(userInput);
+            if (command == null) {
+                throw new WoodyException("The command entered is invalid or formatted incorrectly.");
             }
+            String response = command.execute(this.taskList);
+            if (!command.isReadOnly()) {
+                this.storage.save(this.taskList);
+            }
+            return response;
+        } catch (WoodyException e) {
+            return e.toString();
         }
     }
 }
