@@ -59,7 +59,7 @@ public class Storage {
                 }
                 String[] tokens = line.split("\\|");
                 Command command = parser.parseData(tokens[1]);
-                if (command == null) { // malformed data in local file
+                if (command == null) { // Ignores malformed data in the local file
                     continue;
                 }
                 command.execute(tasks);
