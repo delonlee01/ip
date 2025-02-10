@@ -38,9 +38,10 @@ public class Parser {
         for (var commandClass : commands) {
             try {
                 Command command = (Command) commandClass.getMethod("createCommandIfValid", params).invoke(null, args);
-                if (command != null) {
-                    return command;
+                if (command == null) {
+                    continue;
                 }
+                return command;
             } catch (Exception e) {
                 throw new WoodyException("Unable to parse the command given.");
             }

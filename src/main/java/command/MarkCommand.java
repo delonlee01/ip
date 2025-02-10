@@ -31,11 +31,11 @@ public class MarkCommand extends Command {
      */
     public static MarkCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            int index = Integer.parseInt(matcher.group("index")) - 1;
-            return new MarkCommand(index);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        int index = Integer.parseInt(matcher.group("index")) - 1;
+        return new MarkCommand(index);
     }
 
     @Override

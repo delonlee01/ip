@@ -36,11 +36,11 @@ public class CheckCommand extends Command {
      */
     public static CheckCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            LocalDate date = LocalDate.parse(matcher.group("date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            return new CheckCommand(date);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        LocalDate date = LocalDate.parse(matcher.group("date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return new CheckCommand(date);
     }
 
     @Override

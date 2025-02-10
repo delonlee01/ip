@@ -63,9 +63,10 @@ public class Storage {
                     continue;
                 }
                 command.execute(tasks);
-                if (tokens[0].equals("1")) {
-                    new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
+                if (!tokens[0].equals("1")) {
+                    continue;
                 }
+                new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
             }
             reader.close();
         } catch (FileNotFoundException e) {

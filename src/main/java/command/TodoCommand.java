@@ -30,10 +30,10 @@ public class TodoCommand extends Command {
      */
     public static TodoCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            return new TodoCommand(matcher.group("description"));
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        return new TodoCommand(matcher.group("description"));
     }
 
     @Override
