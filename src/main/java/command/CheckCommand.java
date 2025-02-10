@@ -48,6 +48,7 @@ public class CheckCommand extends Command {
         ArrayList<Task> tasks = taskList.getTasks();
         StringBuilder output = new StringBuilder(String.format("Here are the tasks for %s:\n",
                 date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))));
+
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             if (task instanceof Deadline) {
@@ -67,6 +68,7 @@ public class CheckCommand extends Command {
             }
             output.append(String.format("%d.%s\n", i + 1, task));
         }
+
         return output.toString();
     }
 
