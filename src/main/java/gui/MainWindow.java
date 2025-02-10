@@ -50,6 +50,8 @@ public class MainWindow extends AnchorPane {
 
     private void handleWoodyResponse(String input) {
         String response = this.woody.getResponse(input);
+        assert !response.isEmpty() : "Woody's response should not be empty";
+
         this.dialogContainer.getChildren().add(DialogBox.getWoodyDialog(response, woodyImage));
         if (response.startsWith("Bye")) {
             new Timer().schedule(new TimerTask() {

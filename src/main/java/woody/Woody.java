@@ -23,6 +23,7 @@ public class Woody {
         } catch (WoodyException e) {
             this.taskList = new TaskList();
         }
+        assert this.taskList != null : "Task list should not be null";
     }
 
     /**
@@ -32,6 +33,7 @@ public class Woody {
      * @return Woody's response
      */
     public String getResponse(String userInput) {
+        assert userInput != null : "User input should not be null";
         try {
             Command command = this.parser.parseInput(userInput);
             if (command == null) {
