@@ -36,11 +36,11 @@ public class CheckCommand extends Command {
      */
     public static CheckCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            LocalDate date = LocalDate.parse(matcher.group("date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            return new CheckCommand(date);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        LocalDate date = LocalDate.parse(matcher.group("date"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return new CheckCommand(date);
     }
 
     @Override
@@ -48,6 +48,7 @@ public class CheckCommand extends Command {
         ArrayList<Task> tasks = taskList.getTasks();
         StringBuilder output = new StringBuilder(String.format("Here are the tasks for %s:\n",
                 date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"))));
+
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             if (task instanceof Deadline) {
@@ -67,6 +68,7 @@ public class CheckCommand extends Command {
             }
             output.append(String.format("%d.%s\n", i + 1, task));
         }
+
         return output.toString();
     }
 

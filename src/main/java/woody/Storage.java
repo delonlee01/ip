@@ -59,13 +59,14 @@ public class Storage {
                 }
                 String[] tokens = line.split("\\|");
                 Command command = parser.parseData(tokens[1]);
-                if (command == null) { // malformed data in local file
+                if (command == null) { // Ignores malformed data in the local file
                     continue;
                 }
                 command.execute(tasks);
-                if (tokens[0].equals("1")) {
-                    new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
+                if (!tokens[0].equals("1")) {
+                    continue;
                 }
+                new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
             }
             reader.close();
         } catch (FileNotFoundException e) {

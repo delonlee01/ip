@@ -18,10 +18,10 @@ public class ListCommand extends Command {
      * @return ListCommand
      */
     public static ListCommand createCommandIfValid(String input) {
-        if (input.matches(REGEX_PATTERN)) {
-            return new ListCommand();
+        if (!input.matches(REGEX_PATTERN)) {
+            return null;
         }
-        return null;
+        return new ListCommand();
     }
 
     @Override

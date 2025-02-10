@@ -32,11 +32,11 @@ public class DeleteCommand extends Command {
      */
     public static DeleteCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            int index = Integer.parseInt(matcher.group("index")) - 1;
-            return new DeleteCommand(index);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        int index = Integer.parseInt(matcher.group("index")) - 1;
+        return new DeleteCommand(index);
     }
 
     @Override

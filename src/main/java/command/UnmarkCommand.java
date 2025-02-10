@@ -31,11 +31,11 @@ public class UnmarkCommand extends Command {
      */
     public static UnmarkCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            int index = Integer.parseInt(matcher.group("index")) - 1;
-            return new UnmarkCommand(index);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        int index = Integer.parseInt(matcher.group("index")) - 1;
+        return new UnmarkCommand(index);
     }
 
     @Override

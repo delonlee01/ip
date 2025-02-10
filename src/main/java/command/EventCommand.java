@@ -40,12 +40,12 @@ public class EventCommand extends Command {
      */
     public static EventCommand createCommandIfValid(String input) {
         Matcher matcher = REGEX_PATTERN.matcher(input);
-        if (matcher.matches()) {
-            LocalDate from = LocalDate.parse(matcher.group("from"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            LocalDate to = LocalDate.parse(matcher.group("to"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            return new EventCommand(matcher.group("description"), from, to);
+        if (!matcher.matches()) {
+            return null;
         }
-        return null;
+        LocalDate from = LocalDate.parse(matcher.group("from"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        LocalDate to = LocalDate.parse(matcher.group("to"), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return new EventCommand(matcher.group("description"), from, to);
     }
 
     @Override
