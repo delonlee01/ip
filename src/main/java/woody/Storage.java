@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 import command.Command;
 import command.MarkCommand;
+import command.TagCommand;
 import exception.WoodyException;
 import task.Task;
 import task.TaskList;
@@ -63,10 +64,16 @@ public class Storage {
                     continue;
                 }
                 command.execute(tasks);
-                if (!tokens[0].equals("1")) {
-                    continue;
+
+                int index = tasks.getTaskCount() - 1;
+                if (!tokens[2].isBlank()) {
+                    for (String label : tokens[2].split(" ")) {
+                        new TagCommand(index, label.trim()).execute(tasks);
+                    }
                 }
-                new MarkCommand(tasks.getTaskCount() - 1).execute(tasks);
+                if (tokens[0].equals("1")) {
+                    new MarkCommand(index).execute(tasks);
+                }
             }
             reader.close();
         } catch (FileNotFoundException e) {

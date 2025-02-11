@@ -45,9 +45,11 @@ public class Event extends Task {
     @Override
     public String toDataString() {
         int status = this.isDone ? 1 : 0;
-        return String.format("%d|event %s /from %s /to %s", status, this.description,
+        String tags = this.getTags().replace("#", "");
+        return String.format("%d|event %s /from %s /to %s|%s", status, this.description,
                 this.from.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                this.to.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                this.to.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                tags.isEmpty() ? " " : tags);
     }
 
     @Override
