@@ -21,13 +21,20 @@ public class DeadlineTest {
     public void toDataString_doneStatus_success() {
         Deadline task = new Deadline("test task", BY_DATE);
         task.markAsDone();
-        assertEquals("1|deadline test task /by 01/01/2025", task.toDataString());
+        assertEquals("1|deadline test task /by 01/01/2025| ", task.toDataString());
     }
 
     @Test
     public void toDataString_notDoneStatus_success() {
         Deadline task = new Deadline("test task", BY_DATE);
-        assertEquals("0|deadline test task /by 01/01/2025", task.toDataString());
+        assertEquals("0|deadline test task /by 01/01/2025| ", task.toDataString());
+    }
+
+    @Test
+    public void toDataString_hasTags_success() {
+        Deadline task = new Deadline("test task", BY_DATE);
+        task.addTag(new Tag("testing"));
+        assertEquals("0|deadline test task /by 01/01/2025|testing", task.toDataString());
     }
 
     @Test

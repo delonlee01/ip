@@ -33,8 +33,10 @@ public class Deadline extends Task {
     @Override
     public String toDataString() {
         int status = this.isDone ? 1 : 0;
-        return String.format("%d|deadline %s /by %s", status, this.description,
-                this.by.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        String tags = this.getTags().replace("#", "");
+        return String.format("%d|deadline %s /by %s|%s", status, this.description,
+                this.by.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                tags.isEmpty() ? " " : tags);
     }
 
     @Override

@@ -29,13 +29,20 @@ public class EventTest {
     public void toDataString_doneStatus_success() {
         Event task = new Event("test task", FROM_DATE, TO_DATE);
         task.markAsDone();
-        assertEquals("1|event test task /from 01/01/2025 /to 02/01/2025", task.toDataString());
+        assertEquals("1|event test task /from 01/01/2025 /to 02/01/2025| ", task.toDataString());
     }
 
     @Test
     public void toDataString_notDoneStatus_success() {
         Event task = new Event("test task", FROM_DATE, TO_DATE);
-        assertEquals("0|event test task /from 01/01/2025 /to 02/01/2025", task.toDataString());
+        assertEquals("0|event test task /from 01/01/2025 /to 02/01/2025| ", task.toDataString());
+    }
+
+    @Test
+    public void toDataString_hasTags_success() {
+        Event task = new Event("test task", FROM_DATE, TO_DATE);
+        task.addTag(new Tag("testing"));
+        assertEquals("0|event test task /from 01/01/2025 /to 02/01/2025|testing", task.toDataString());
     }
 
     @Test
