@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 import exception.TaskNotFoundException;
+import task.Task;
 import task.TaskList;
 import task.Todo;
 
@@ -32,12 +33,29 @@ public class UnmarkCommandTest {
     }
 
     @Test
-    public void execute_success() {
+    public void execute_isDone_success() {
+        TaskList taskList = new TaskList();
+        Task task = new Todo("test task 1");
+        task.markAsDone();
+        taskList.addTask(task);
+        try {
+            String expected = """
+                    Alright! I've marked this task as not done yet:
+                    [T][ ] test task 1
+                    """;
+            assertEquals(expected, COMMAND.execute(taskList));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void execute_isNotDone_success() {
         TaskList taskList = new TaskList();
         taskList.addTask(new Todo("test task 1"));
         try {
             String expected = """
-                    Alright! I've marked this task as not done yet:
+                    Shoot! This task is already marked as not done yet:
                     [T][ ] test task 1
                     """;
             assertEquals(expected, COMMAND.execute(taskList));
