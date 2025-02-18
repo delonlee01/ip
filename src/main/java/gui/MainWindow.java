@@ -54,6 +54,7 @@ public class MainWindow extends AnchorPane {
 
         this.dialogContainer.getChildren().add(DialogBox.getWoodyDialog(response, woodyImage));
         if (response.startsWith("Bye")) {
+            // Solution below inspired by https://stackoverflow.com/a/21996863
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
