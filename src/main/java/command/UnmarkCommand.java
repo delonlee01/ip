@@ -42,6 +42,9 @@ public class UnmarkCommand extends Command {
     public String execute(TaskList taskList) throws TaskNotFoundException {
         try {
             Task task = taskList.getTask(this.index);
+            if (!task.getStatus()) {
+                return "Shoot! This task is already marked as not done yet:\n" + task + "\n";
+            }
             task.markAsNotDone();
             return "Alright! I've marked this task as not done yet:\n" + task + "\n";
         } catch (IndexOutOfBoundsException e) {

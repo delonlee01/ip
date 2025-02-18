@@ -42,6 +42,9 @@ public class MarkCommand extends Command {
     public String execute(TaskList taskList) throws TaskNotFoundException {
         try {
             Task task = taskList.getTask(this.index);
+            if (task.getStatus()) {
+                return "Shoot! This task is already marked as done:\n" + task + "\n";
+            }
             task.markAsDone();
             return "Yee-haw! I've marked this task as done:\n" + task + "\n";
         } catch (IndexOutOfBoundsException e) {
